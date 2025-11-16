@@ -31,7 +31,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#000000">
     <!-- Favicon -->
-   <link rel="icon" type="image/png" href="images/searchlogo.webp">
+   <link rel="icon" type="image/webp" href="images/searchlogo.webp">
    
   <title>Playonic: Free Online Games - Play Now!</title>
     
@@ -628,172 +628,171 @@
  
   <!-- JavaScript -->
 <script>
-  (function () {
+  (function() {
     const searchIconWidget = document.querySelector('.search-icon-widget');
     const searchOverlay = document.getElementById('searchOverlay');
     const closeSearch = document.getElementById('closeSearch');
     const widget = document.querySelector('.poki-widget');
     const searchInput = document.querySelector('.search-input');
-
+    
+    // 🎯 NEW — Search results ka container
     const resultContainer = document.createElement('div');
+    resultContainer.className = "search-result-box"; // NEW CLASS
     resultContainer.style.padding = '10px 20px';
-    resultContainer.style.color = 'white';
     if (searchOverlay) searchOverlay.appendChild(resultContainer);
-
+    
     let allGames = [];
     let popularGames = [];
-
-    // ✅ JSON load
+    
+    // JSON Load
     fetch("games.json")
       .then(res => res.json())
       .then(data => {
         allGames = data;
-        updatePopularGames(); // first load
+        updatePopularGames();
       })
       .catch(err => console.error("Error loading games.json", err));
-
-    // ✅ Play count save
+    
     function increasePlayCount(id) {
       let playCounts = JSON.parse(localStorage.getItem('playCounts') || '{}');
       playCounts[id] = (playCounts[id] || 0) + 1;
       localStorage.setItem('playCounts', JSON.stringify(playCounts));
       updatePopularGames();
     }
-
-    // ✅ Recently Played save
+    
     function saveRecentlyPlayed(id) {
       let game = allGames.find(g => g.id === id);
       if (!game) return;
-
+      
       let recent = JSON.parse(localStorage.getItem('recentlyPlayed') || '[]');
       recent = recent.filter(g => g.id !== id);
       recent.unshift({ id: game.id, title: game.title, img: game.img });
       if (recent.length > 50) recent.pop();
-
+      
       localStorage.setItem('recentlyPlayed', JSON.stringify(recent));
-      localStorage.setItem('selectedGameId', id); // ✅ yahi id view-page ke liye
+      localStorage.setItem('selectedGameId', id);
       increasePlayCount(id);
     }
-
-    // ✅ Popular Games update (Top 10 by playCount)
+    
     function updatePopularGames() {
       let playCounts = JSON.parse(localStorage.getItem('playCounts') || '{}');
       popularGames = [...allGames].sort((a, b) => {
-        let countA = playCounts[a.id] || 0;
-        let countB = playCounts[b.id] || 0;
-        return countB - countA;
+        return (playCounts[b.id] || 0) - (playCounts[a.id] || 0);
       }).slice(0, 10);
     }
-
-    // ✅ Render scroll section
-    function renderScrollSection(title, items) {
-      if (!resultContainer) return;
+    
+    // 🎯 FIX — Search result ke liye NEW container class
+    function renderSearchSection(items) {
       const wrapper = document.createElement('div');
-      wrapper.innerHTML = `<h3 style="margin:10px 0;">${title}</h3>`;
-      const sc = document.createElement('div');
-      sc.className = 'scroll-container';
+      wrapper.className = 'search-results-container'; // NEW CLASS (No scroll issue)
+      
       items.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'game-card-inline';
-        card.innerHTML = `<img src="${item.img}" alt="${item.title}" style="cursor:pointer;">`;
-
+        card.className = 'search-result-card'; // NEW CLASS
+        card.innerHTML = `
+        <img src="${item.img}" alt="${item.title}" style="cursor:pointer;width:100px;height:100px;border-radius:10px;">
+        <p style="color:white;font-size:13px;margin-top:5px">${item.title}</p>
+      `;
+        
         card.querySelector("img").addEventListener("click", () => {
           saveRecentlyPlayed(item.id);
           window.location.href = "view-page.html";
         });
-
+        
+        wrapper.appendChild(card);
+      });
+      
+      resultContainer.appendChild(wrapper);
+    }
+    
+    function renderDefaultSection(title, items) {
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = `<h3 style="margin:10px 0;color:white">${title}</h3>`;
+      
+      const sc = document.createElement('div');
+      sc.className = 'scroll-container'; // USED ONLY FOR DEFAULT SECTIONS
+      items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'game-card-inline';
+        card.innerHTML = `
+        <img src="${item.img}" alt="${item.title}" style="cursor:pointer;">
+      `;
+        
+        card.querySelector("img").addEventListener("click", () => {
+          saveRecentlyPlayed(item.id);
+          window.location.href = "view-page.html";
+        });
+        
         sc.appendChild(card);
       });
+      
       wrapper.appendChild(sc);
       resultContainer.appendChild(wrapper);
     }
-
-    // ✅ Show default sections
+    
     function showDefaultSections() {
-      if (!resultContainer) return;
       resultContainer.innerHTML = '';
       const recent = JSON.parse(localStorage.getItem('recentlyPlayed') || '[]');
-      if (recent.length) renderScrollSection('Recently Playing', recent);
-      if (popularGames.length) renderScrollSection('Popular Games', popularGames);
+      if (recent.length) renderDefaultSection("Recently Playing", recent);
+      if (popularGames.length) renderDefaultSection("Popular Games", popularGames);
     }
-
-    // ✅ Search Overlay open
+    
+    // OPEN search overlay
     if (searchIconWidget) {
       searchIconWidget.addEventListener('click', () => {
-        if (!searchOverlay || !widget) return;
-        searchOverlay.style.display = 'block';
-        widget.style.display = 'none';
-        setTimeout(() => searchInput && searchInput.focus(), 250);
+        searchOverlay.style.display = "block";
+        widget.style.display = "none";
+        setTimeout(() => searchInput.focus(), 250);
         showDefaultSections();
       });
     }
-
-    // ✅ Search Overlay close
+    
+    // CLOSE search overlay
     if (closeSearch) {
       closeSearch.addEventListener('click', () => {
-        if (!searchOverlay || !widget || !resultContainer) return;
-        searchOverlay.style.display = 'none';
-        widget.style.display = 'flex';
-        if (searchInput) searchInput.value = '';
-        resultContainer.innerHTML = '';
+        searchOverlay.style.display = "none";
+        widget.style.display = "flex";
+        searchInput.value = "";
+        resultContainer.innerHTML = "";
       });
     }
-
-    // ✅ Search system
+    
+    // Search system
     if (searchInput) {
       searchInput.addEventListener('input', () => {
-        if (!resultContainer) return;
-        const query = (searchInput.value || '').trim().toLowerCase();
-        resultContainer.innerHTML = '';
-
-        if (query === '') {
+        const query = searchInput.value.trim().toLowerCase();
+        resultContainer.innerHTML = "";
+        
+        if (query === "") {
           showDefaultSections();
           return;
         }
-
+        
         const matched = allGames.filter(g =>
-          (g.title && g.title.toLowerCase().includes(query)) ||
-          (g.description && g.description.toLowerCase().includes(query)) ||
-          (g.tags && g.tags.some(tag => tag.toLowerCase().includes(query)))
+          g.title?.toLowerCase().includes(query) ||
+          g.description?.toLowerCase().includes(query) ||
+          g.tags?.some(t => t.toLowerCase().includes(query))
         );
-
+        
         if (matched.length) {
-          const wrapper = document.createElement('div');
-          wrapper.className = 'scroll-container';
-          matched.forEach(game => {
-            const card = document.createElement('div');
-            card.className = 'game-card-inline';
-            card.innerHTML = `<img src="${game.img}" alt="${game.title}" style="cursor:pointer;">`;
-
-            card.querySelector("img").addEventListener("click", () => {
-              saveRecentlyPlayed(game.id);
-              window.location.href = "view-page.html";
-            });
-
-            wrapper.appendChild(card);
-          });
-          resultContainer.appendChild(wrapper);
+          renderSearchSection(matched); // NEW vertical result
         } else {
-          resultContainer.innerHTML = `<p style="margin-top:10px;color:white">No games found</p>`;
+          resultContainer.innerHTML = `<p style="color:white;margin-top:10px">No games found</p>`;
         }
       });
     }
-
-    // ✅ Home page ke games ko bhi save karo
+    
+    // Save home page plays
     document.querySelectorAll('.game-card a').forEach(link => {
-      link.addEventListener('click', (e) => {
+      link.addEventListener('click', () => {
         const img = link.querySelector('img');
-        if (!img) return;
         const game = allGames.find(g => g.img === img.getAttribute("src"));
-        if (game) {
-          saveRecentlyPlayed(game.id);
-        }
+        if (game) saveRecentlyPlayed(game.id);
       });
     });
-
+    
   })();
 </script>
-  
   
  <!--- vp load -->
 <script>
