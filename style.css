@@ -1,17 +1,77 @@
     body {
       margin: 0;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      background: linear-gradient(135deg, #1e3c72, #1e3c72);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 100px));
-      justify-content: center;
-      gap: 17px;
-      padding-top: 20px;
-    }
+/* ✅ GRID WITHOUT AUTO-FILL (NO BLANK SPACE FIX) */
+.container {
+  display: grid;
+  grid-auto-flow: dense;
+  justify-content: center;
+  gap: 17px;
+  padding-top: 17px;
+}
 
+/* ✅ MOBILE – 3 CARDS */
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: repeat(3, 100px);
+  }
+}
+ 
+    /* 📱 Mobile – Move Floating Widget complete control */
+@media (max-width: 767px) {
+  .poki-widget {
+    transform: 
+      translateX(-1px)   /* ➡️ Right move (mobile) */
+      translateY(2px)  /* ⬇️ Down move (mobile) */
+      scale(1.01);       /*   🔹 Mobile par normal size */
+  }
+}
+ 
+ 
+
+/* ✅ NORMAL CARD SAFETY */
+.game-card {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+    
+    
+    
+    /*___________________________*/
+    /* ✅ FORCE FIX FOR ALL DEVICES desktop mod control*/
+
+.container {
+  display: grid;
+  justify-content: center;
+  gap: 17px;
+  padding-top: 17px;
+}
+
+/* 💻 Desktop = 7 cards */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(7, 110px) !important;
+  }
+}
+/* 💻 Desktop – Move + Resize Complete Floating Widget control */
+@media (min-width: 768px) {
+  .poki-widget {
+    transform: 
+      translateX(29px)   /* ➡️ Right move */
+      translateY(3px)    /* ⬇️ Down move */
+      scale(1.1);         /* 🔍 Size increase (20% bigger) */
+  }
+}
+  
+
+   /*----------------------------*/
+   
+   
+   
+   
     .game-card {
       border-radius: 16px;
       overflow: hidden;
@@ -227,3 +287,55 @@ object-fit: cover; display: block;
   
 }
 h3 { color: #fff; }
+
+
+
+
+
+
+
+
+/*///////Highlight Section///////*/
+ 
+ .highlight-card {
+   border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+  animation: highlightPulse 2s infinite;
+  position: relative;
+  grid-column: span 2;
+  grid-row: span 2;
+  
+}
+
+/* Light glow animation */
+@keyframes highlightPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 247, 255, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.4);
+  }
+}
+
+/* Optional hover zoom */
+.highlight-card img {
+  transition: transform 0.3s ease;
+  
+}
+
+.highlight-card:hover img {
+  transform: scale(1.05);
+}
+ .game-card img,
+.game-card-inline img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  
+}
+
+  
