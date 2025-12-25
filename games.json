@@ -118,12 +118,12 @@
   },
   {
     "id": "14",
-    "title": "Peet A Lock",
-    "link": "https://play.famobi.com/peet-a-lock",
-    "img": "images/PeetALock.webp",
-    "description": "<div><strong>Mobile:-</strong> Yes</div><div><strong>Released:-</strong> December 14,2020 <div> <strong>Technology:-</strong> HTML 5 <div> <strong>Platform:-</strong> Browser (Desktop & Mobile)</div> <hr>Arcade skill-based lock-picking game.",
-    "tags": ["Arcade", "Skill", "Peet", "Puzzle"],
-    "developer": "Famobi"
+    "title": "Hill Racing : Climb Legend",
+    "link": "https://html5.gamemonetize.co/oasq5j87wg0ucx6hsnmw6fejcwenu2aj/",
+    "img": "images/HillClimb.webp",
+    "description": "<div><strong>Mobile:-</strong> Yes</div><div><strong>Released:-</strong> 23 March 2021 <div> <strong>Technology:-</strong> HTML 5 <div> <strong>Platform:-</strong> Browser (Desktop & Mobile)</div> <hr>Play the original classic Hill Climb Racing! Race your way up hill in this physics based driving game! Play for free and also playable offline! Meet Newton Bill, the young aspiring uphill racer. He is about to embark on a journey that takes him to where no ride has ever been before. From Ragnarok to a Nuclear Plant, all places are a racing track to Bill. With little respect to the laws of physics, Bill will not rest until he has conquered the highest hills up on the moon! Face the challenges of unique hill climbing environments with many different cars. Gain bonuses from daring tricks and collect coins to upgrade your car and reach even higher distances. Watch out though - Bill's stout neck is not what it used to be when he was a kid! And his good old gasoline crematorium will easily run out of fuel. Features: • ⚡ Offline Play - Play offline whenever & wherever! •<br><b style='font-size:20px;'>INSTRUCTIONS:-</b><div><b style='font-size:17px;'>PC:-</b><div> Use Mouse & Keyboard <br><b style='font-size:17px;'>Mobile:-</b><div>Tap to Play",
+    "tags": ["Racing","Car","Action"],
+    "developer": "TouraGames"
   },
   {
     "id": "15",
@@ -951,7 +951,7 @@
   {
     "id": "107",
     "title": "Minecraft ",
-    "link": "https://minecraft-cb.netlify.app/",
+    "link": "https://eaglercraft.com",
     "img": "images/Minecraft.webp",
     "description": "<div><strong>Mobile:-</strong> Yes</div><div><strong>Released:-</strong> 17 May 2019 <div> <strong>Technology:-</strong> HTML 5 <div> <strong>Platform:-</strong> Browser (Desktop & Mobile)</div> <hr><b>Minecraft Browser Version (Minecraft Classic) </b>is a creative sandbox game where players can explore a block-based world and <b>build anything they imagine.</b> In this game, you are given unlimited blocks from the beginning, allowing you to freely place and break blocks without any restrictions. Players can fly around the world,<b> change blocks using the hotbar, and design structures such as houses, towers, roads, castles, and artistic builds.</b> The game focuses <b>completely on creativity and exploration,</b making it ideal for casual players and beginners.<br></br><b style='font-size:25px;'>🎯 Important Note:-</b><div>This version does<b> not include survival elements like enemies, health, hunger, combat, crafting, or tools.</b> There is<b> no winning or losing condition; </b>the only objective is to use your creativity to build and enjoy the <b>classic Minecraft-style world </b>directly in your browser without downloading anything. <br><div><b style='font-size:30px;'>control:-</b> <!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\" />\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n  <title>OpenTTD Controls — Mouse & Keyboard</title>\n  <style>\n    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#9aa5b1;--glass:rgba(255,255,255,0.03)}\n    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#000000}\n    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}\n    .card{background:#171819;padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03);color:#ffffff}\n    .card h3{margin:0 0 8px;font-size:16px;color:#ffffff}\n    ul.controls{list-style:none;padding:0;margin:0}\n    ul.controls li{padding:8px 10px;border-radius:8px;margin-bottom:8px;background:var(--glass);display:flex;justify-content:space-between;align-items:center;color:#ffffff}\n    .kbd{font-family:monospace;background:rgba(0,0,0,0.35);padding:6px 8px;border-radius:6px;font-size:13px;color:#ffffff}\n    .notes{margin-top:16px;color:#ffffff;font-size:14px}\n  </style>\n</head>\n<body>\n  <div class=\"grid\">\n        <section class=\"card\">\n      <h3>Mouse Control</h3>\n      <ul class=\"controls\">\n        <li><span>Left Click</span><span class=\"kbd\">Break Block</span></li>\n        <li><span>Right Click</span><span class=\"kbd\">Place Block</span></li>\n        <li><span>MoveMouse</span><span class=\"kbd\"> Look Around / Camera Control </span></li>\n        <li><span> Scroll Wheel</span><span class=\"kbd\"> Change Selected Block </span></li>\n      </ul>\n    </section>\n\n   </section>\n\n   <section class=\"card\">\n      <h3>Keyboard Control </h3>\n      <ul class=\"controls\">\n        <li><span>W</span><span class=\"kbd\">Move Forward</span></li>\n        <li><span>S</span><span class=\"kbd\">Move Backward</span></li>\n        <li><span>A</span><span class=\"kbd\">Move Left</span></li>\n        <li><span>D</span><span class=\"kbd\">Move Right</span></li>\n      <li><span>B</span><span class=\"kbd\">Open Block Inventory</span></li>\n <li><span>R</span><span class=\"kbd\">Reset World</span></li>\n     <li><span>1 to 9</span><span class=\"kbd\">Select Hotbar Slot</span></li>\n        <li><span>Space </span><span class=\"kbd\">Fly up / Jump</span></li>\n    <li><span>Shift</span><span class=\"kbd\">Fly Down</span></li>\n    <li><span>Esc</span><span class=\"kbd\">Open Menu / Unlock Mouse </span></li>\n      </ul>\n    </section>\n\n   <section class=\"card\">\n      <h3> Mobile Control</h3>\n      <ul class=\"controls\">\n        <li><span>Screen</span><span class=\"kbd\">Tap To Play</span>  </section>\n    </div>\n</body>\n</html>",
     "tags": ["Casual","Simulation","Sandbox","Construct","Single player","Arcade"],
@@ -1060,7 +1060,7 @@
   {
     "id": "119",
     "title": "Free Fire ",
-    "link": "intent:\/\/details?id=com.dts.freefireth#Intent;scheme=market;package=com.android.vending;end",
+    "link": "https://html5.gamemonetize.co/zg09tccgn96micblfcmyxmyn22vc5mw5/",
     "img": "images/FreeFire.webp",
     "description": "<div><strong>Mobile:-</strong> Yes</div><div><strong>Released:-</strong> 30 March 2021 <div> <strong>Technology:-</strong> HTML 5<div> <strong>Platform:-</strong> Browser (Desktop, Mobile & tablet)</div> <hr>Free Fire is the ultimate survival shooter game available on mobile. Each 10-minute game places you on a remote island where you are pit against 49 other players, all seeking survival. Players freely choose their starting point with their parachute, and aim to stay in the safe zone for as long as possible. Drive vehicles to explore the vast map, hide in wild, or become invisible by proning under grass or rifts. Ambush, snipe, survive, there is only one goal: to survive and answer the call of duty. [Survival shooter in its original form] Search for weapons, stay in the play zone, loot your enemies and become the last man standing. Along the way, go for legendary airdrops while avoiding airstrikes to gain that little edge against other players. [10 minutes, 50 players, epic survival goodness awaits] Fast and Lite gameplay - Within 10 minutes, a new survivor will emerge. Will you go beyond the call of duty and be the one under the shining lite? [4-man squad, with in-game voice chat] Create squads of up to 4 players and establish communication with your squad at the very first moment. Answer the call of duty and lead your friends to victory and be the last team standing at the apex. [Clash Squad] Fast paced 4v4 game mode is now open 24/7! Manage your economy, purchase weapons, and defeat the enemy squad! [Realistic and smooth graphics] Easy to use controls and smooth graphics promises the best survival experience you will find on mobile to help you immortalize your name among the legends. [Contact us] Customer Service: https://goo.gl/8f5918</b><div><br><b style='font-size:20px;'>INSTRUCTIONS:-</b> <div><b>Free Fire</b> is the ultimate survival shooter game available on mobile. Each 10-minute game places you on a remote island where you are pit against 49 other players, all seeking survival. Players freely choose their starting point with their parachute,",
     "tags": ["Action","Free","Fire"],
@@ -1075,7 +1075,7 @@
     "tags": ["Airport","Security","Simulation","Casual"],
 "developer": "bestgames.com"
   }
-  
+ 
 
   
  
