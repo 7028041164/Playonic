@@ -1074,8 +1074,25 @@
     "description": "<div><strong>Mobile:-</strong> Yes</div><div><strong>Released:-</strong> 29 July 2024 <div> <strong>Technology:-</strong> HTML 5<div> <strong>Platform:-</strong> Browser (Desktop, Mobile & tablet)</div> <hr>Airport Security 3D is an airport security check simulation game with 3D cartoon models. Your mission is to arrest criminals with fake IDs and weapons while approving civilians. On the counter, you need to check the passengers name and corresponding ID card. At the security checkpoint, you are required to check their baggage and find the criminals who take weapons. Finally, you can question the criminals..<br><b style='font-size:20px;'>INSTRUCTIONS:-</b><div><b style='font-size:17px;'>PC:-</b><div>Use Mouse To Play<br><b style='font-size:17px;'>Mobile:-</b><div>Tap to Play",
     "tags": ["Airport","Security","Simulation","Casual"],
 "developer": "bestgames.com"
+  },
+  {
+    "id": "121",
+    "title": "2048",
+    "link":"http://2048-ar.netlify.app",
+    "img": "images/2048.webp",
+    "description": "",
+    "tags": [],
+"developer": "Famobi"
+  } ,
+  {
+    "id": "122",
+    "title": "GTA ViceCity",
+    "link": "https://vc.quenq.com",
+    "img": "images/gtavicecity.webp",
+    "description": "<div><strong>Mobile:-</strong> Yes</div><div><strong>Released:-</strong> 6 December 2012 <div> <strong>Technology:-</strong> HTML 5 (WEBGL)<div> <strong>Platform:-</strong> Browser (Desktop, Mobile & tablet)</div> <hr><b> <div style='text-align:center; font-size:20px; font-weight:bold;'>Welcome back to the 1980s.</div><br>Grand Theft Auto: Vice City - Web Edition is a full, self-contained port of the classic open-world game, running entirely in your browser via WebAssembly.</b><br> <br>Built on the revcDOS codebase (an open web port of the reverse-engineered reVC engine). Requires <b>no downloads and no installation</b>—assets stream dynamically as you play.<br><br><b>Key Features:</b>Integrated Save Manager: Upload your existing `.b` save files from PC/PS2 to resume your progress, or download backups to keep your saves safe.<br><br><b>Instant Access:</b> No large initial downloads. The game engine loads in seconds.</b><br><br><b>Cross-Platform:</b> Full support for keyboard/mouse on desktop and touch controls on mobile devices.<hr><b>credit:</b> Game embedded from <a href='https://quenq.com/apps/vice-city/' target='_blank'>Quenq.com</a>. All rights belong to the original developers and publishers.",
+    "tags": ["Adventure","Realistic","Action","Missions","Crime"],
+"developer": "Famobi"
   }
- 
 
   
  
