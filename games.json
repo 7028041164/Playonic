@@ -951,7 +951,7 @@
   {
     "id": "107",
     "title": "Minecraft ",
-    "link": "https://eaglercraft.com",
+    "link": "https://eaglecraft-ar.netlify.app",
     "img": "images/Minecraft.webp",
     "description": "<div><strong>Mobile:-</strong> Yes</div><div><strong>Released:-</strong> 17 May 2019 <div> <strong>Technology:-</strong> HTML 5 <div> <strong>Platform:-</strong> Browser (Desktop & Mobile)</div> <hr><b>Minecraft Browser Version (Minecraft Classic) </b>is a creative sandbox game where players can explore a block-based world and <b>build anything they imagine.</b> In this game, you are given unlimited blocks from the beginning, allowing you to freely place and break blocks without any restrictions. Players can fly around the world,<b> change blocks using the hotbar, and design structures such as houses, towers, roads, castles, and artistic builds.</b> The game focuses <b>completely on creativity and exploration,</b making it ideal for casual players and beginners.<br></br><b style='font-size:25px;'>🎯 Important Note:-</b><div>This version does<b> not include survival elements like enemies, health, hunger, combat, crafting, or tools.</b> There is<b> no winning or losing condition; </b>the only objective is to use your creativity to build and enjoy the <b>classic Minecraft-style world </b>directly in your browser without downloading anything. <br><div><b style='font-size:30px;'>control:-</b> <!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\" />\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n  <title>OpenTTD Controls — Mouse & Keyboard</title>\n  <style>\n    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#9aa5b1;--glass:rgba(255,255,255,0.03)}\n    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#000000}\n    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}\n    .card{background:#171819;padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03);color:#ffffff}\n    .card h3{margin:0 0 8px;font-size:16px;color:#ffffff}\n    ul.controls{list-style:none;padding:0;margin:0}\n    ul.controls li{padding:8px 10px;border-radius:8px;margin-bottom:8px;background:var(--glass);display:flex;justify-content:space-between;align-items:center;color:#ffffff}\n    .kbd{font-family:monospace;background:rgba(0,0,0,0.35);padding:6px 8px;border-radius:6px;font-size:13px;color:#ffffff}\n    .notes{margin-top:16px;color:#ffffff;font-size:14px}\n  </style>\n</head>\n<body>\n  <div class=\"grid\">\n        <section class=\"card\">\n      <h3>Mouse Control</h3>\n      <ul class=\"controls\">\n        <li><span>Left Click</span><span class=\"kbd\">Break Block</span></li>\n        <li><span>Right Click</span><span class=\"kbd\">Place Block</span></li>\n        <li><span>MoveMouse</span><span class=\"kbd\"> Look Around / Camera Control </span></li>\n        <li><span> Scroll Wheel</span><span class=\"kbd\"> Change Selected Block </span></li>\n      </ul>\n    </section>\n\n   </section>\n\n   <section class=\"card\">\n      <h3>Keyboard Control </h3>\n      <ul class=\"controls\">\n        <li><span>W</span><span class=\"kbd\">Move Forward</span></li>\n        <li><span>S</span><span class=\"kbd\">Move Backward</span></li>\n        <li><span>A</span><span class=\"kbd\">Move Left</span></li>\n        <li><span>D</span><span class=\"kbd\">Move Right</span></li>\n      <li><span>B</span><span class=\"kbd\">Open Block Inventory</span></li>\n <li><span>R</span><span class=\"kbd\">Reset World</span></li>\n     <li><span>1 to 9</span><span class=\"kbd\">Select Hotbar Slot</span></li>\n        <li><span>Space </span><span class=\"kbd\">Fly up / Jump</span></li>\n    <li><span>Shift</span><span class=\"kbd\">Fly Down</span></li>\n    <li><span>Esc</span><span class=\"kbd\">Open Menu / Unlock Mouse </span></li>\n      </ul>\n    </section>\n\n   <section class=\"card\">\n      <h3> Mobile Control</h3>\n      <ul class=\"controls\">\n        <li><span>Screen</span><span class=\"kbd\">Tap To Play</span>  </section>\n    </div>\n</body>\n</html>",
     "tags": ["Casual","Simulation","Sandbox","Construct","Single player","Arcade"],
@@ -1080,21 +1080,39 @@
     "title": "2048",
     "link":"http://2048-ar.netlify.app",
     "img": "images/2048.webp",
-    "description": "",
-    "tags": [],
-"developer": "Famobi"
+    "description": "<div><strong>Mobile:-</strong> Yes</div><div><strong>Released:-</strong> 9 March 2014 <div> <strong>Technology:-</strong> HTML 5 (Github)<div> <strong>Platform:-</strong> Browser (Desktop, Mobile & tablet)</div> <hr><b>Goal: </b>Combine tiles with the same number to double their value, eventually reaching the 2048 tile.<br><br><b>Controls:</b> Use arrow keys (keyboard) or swipes (touchscreen) to move all tiles in a direction.<br><br><b>Merging Mechanics: </b>When two tiles with the same number collide, they merge into one, adding their values together.<br><br><b>Game Over:</b> The game ends when the grid is full and no moves are possible (no adjacent tiles have the same value).<br><br><b>Strategy:</b> Players generally focus on keeping the highest-numbered tile in a corner to avoid cluttering the grid. <br><br>The game continues after achieving <b>2048</b>, allowing for <b>higher scores.</b>",
+    "tags": ["Puzzle","Single player"],
+"developer": "Gabriele Cirulli"
   } ,
   {
     "id": "122",
     "title": "GTA ViceCity",
     "link": "https://vc.quenq.com",
-    "img": "images/gtavicecity.webp",
-    "description": "<div><strong>Mobile:-</strong> Yes</div><div><strong>Released:-</strong> 6 December 2012 <div> <strong>Technology:-</strong> HTML 5 (WEBGL)<div> <strong>Platform:-</strong> Browser (Desktop, Mobile & tablet)</div> <hr><b> <div style='text-align:center; font-size:20px; font-weight:bold;'>Welcome back to the 1980s.</div><br>Grand Theft Auto: Vice City - Web Edition is a full, self-contained port of the classic open-world game, running entirely in your browser via WebAssembly.</b><br> <br>Built on the revcDOS codebase (an open web port of the reverse-engineered reVC engine). Requires <b>no downloads and no installation</b>—assets stream dynamically as you play.<br><br><b>Key Features:</b>Integrated Save Manager: Upload your existing `.b` save files from PC/PS2 to resume your progress, or download backups to keep your saves safe.<br><br><b>Instant Access:</b> No large initial downloads. The game engine loads in seconds.</b><br><br><b>Cross-Platform:</b> Full support for keyboard/mouse on desktop and touch controls on mobile devices.<hr><b>credit:</b> Game embedded from <a href='https://quenq.com/apps/vice-city/' target='_blank'>Quenq.com</a>. All rights belong to the original developers and publishers.",
+    "img": "images/Gtavicecity.webp",
+    "description": "<div><strong>Mobile:-</strong> Yes</div><div><strong>Released:-</strong> 6 December 2012 <div> <strong>Technology:-</strong> HTML 5 (WEBGL)<div> <strong>Platform:-</strong> Browser (Desktop, Mobile & tablet)</div> <hr><b> <div style='text-align:center; font-size:20px; font-weight:bold;'>Step into the 1980s with Vice City.</div></b><br><b>Grand Theft Auto: Vice City - Web Edition</b> lets you experience the legendary open-world action game directly in your browser. This version runs completely online using <b>WebAssembly technology</b>, allowing players to enjoy the classic Vice City gameplay without installing anything.<br><br>The game is powered by the <b>revcDOS codebase</b>, which is a web port of the reverse-engineered <b>reVC engine</b>. Because of this system, the game works smoothly in the browser and the required assets <b>load dynamically while you play</b>, so there is <b>no need for large downloads or installation</b>.<br><br><b>Key Features:</b><br><b>Integrated Save Manager:</b> Players can upload their existing <b>.b save files</b> from PC or PS2 to continue their progress. You can also download backup files to keep your saves safe.<br><br><b>Instant Access:</b> The engine loads quickly in the browser, so you can start playing within seconds without waiting for heavy downloads.<br><br><b>Cross-Platform Support:</b> The game supports <b>keyboard and mouse on desktop</b> and also provides <b>touch controls for mobile devices</b>, making it playable on different devices easily.<hr><b>Credit:</b> Game embedded from <a href='https://quenq.com/apps/vice-city/' target='_blank'>Quenq.com</a>. All rights belong to the original developers and publishers.",
     "tags": ["Adventure","Realistic","Action","Missions","Crime"],
-"developer": "Famobi"
+"developer": "Rockstar Games"
   }
 
-  
+  ,
+  {
+    "id": "123",
+    "title": "Ludo King",
+    "link": "https://ludoking.com/play/",
+    "img": "images/Ludoking.webp",
+    "description": "<div><strong>Mobile:-</strong> Yes</div><div><strong>Released:-</strong> 17 August 2023 <div> <strong>Technology:-</strong> HTML 5 <div> <strong>Platform:-</strong> Browser (Desktop, Mobile & tablet)</div> <hr><b style='font-size:20px'>Play the Classic Ludo King Game</b>Ludo King is a popular digital version of the traditional Ludo board game that many people grew up playing with friends and family. The game brings the same classic experience to mobile and web platforms with smooth gameplay and colorful design. Players can enjoy the game in online multiplayer mode with friends or play offline with family on the same device. Its simple rules and nostalgic feel make it one of the most loved casual games around the world.<br><br><b style='font-size:20px'>Why Players Love Ludo King</b><br>Easy-to-understand gameplay based on the traditional Ludo board game.<br>Supports both online and offline multiplayer modes.<br>Colorful interface and smooth game controls.<br>Play with friends, family, or players from around the world.<br>One of the most widely played casual games on mobile devices.<br>A fun and relaxing board game experience for all age groups.<br><hr><div style='font-size:14px;color:#aaa;'>This game is embedded from the official Ludo King platform developed by Gametion Technologies. We do not own this game. All rights belong to the original developers and publishers.</div>",
+    "tags": ["Board game","Multiplayer","Ludo"],
+"developer": "Gametion Global"
+  },
+  {
+    "id": "124",
+    "title": "teacher",
+    "link": "https://g.igroutka.ru/games/1087/NgleEW1zP8YRpXGI/9d2ca9df-7f2c-4685-8907-e330be4ef190/index.html",
+    "img": " ",
+    "description": "",
+    "tags": [],
+"developer": "Z&K Games"
+  }
  
    
   
