@@ -1,0 +1,1096 @@
+{
+   "io": {
+   "title": ".IO Games",
+   "description": "Online multiplayer .io games khelo aur real players ke saath compete karo.",
+   "icon": "category/io.png",
+   "tags": [".io Games"]
+ },
+ "1v1": {
+   "title": "1v1 Games",
+   "description": "1v1 battles mein apni skills dikhao aur opponent ko haro.",
+   "icon": "category/1v1.png",
+"tags": ["1v1 Games"]
+ },
+ "2player": {
+   "title": "2 Player Games",
+   "description": "Dost ke saath ek hi device par 2 player games khelo.",
+   "icon": "category/2player.png",
+"tags": ["2 Player Games"]
+ },
+ "3d": {
+   "title": "3D Games",
+   "description": "Realistic graphics aur immersive 3D games ka maza lo.",
+   "icon": "category/3d.png",
+"tags": ["3D Games"]
+ },
+ "action": {
+   "title": "Action Games",
+   "description": "Fast-paced action aur fighting games enjoy karo.",
+   "icon": "category/2048.webp",
+"tags": ["Action Games"]
+
+ },
+ "adventure": {
+   "title": "Adventure Games",
+   "description": "Exciting adventures aur story-based games explore karo.",
+   "icon": "category/adventure.png",
+"tags": ["Adventure Games"]
+   
+ },
+  "airplane": {
+    "title": "Airplane Games",
+    "description": "Plane fly karo, missions complete karo aur sky mein adventure enjoy karo.",
+    "icon": "category/airplane.png",
+"tags": ["Airplane Games"]
+  },
+  "animal": {
+    "title": "Animal Games",
+    "description": "Animals ke saath fun aur cute gameplay wale games khelo.",
+    "icon": "category/animal.png",
+"tags": ["Animal Games"]
+  },
+  "anime": {
+    "title": "Anime Games",
+    "description": "Popular anime characters ke saath action aur adventure games enjoy karo.",
+    "icon": "category/anime.png",
+"tags": ["Anime Games"]
+  },
+  "arcade": {
+    "title": "Arcade Games",
+    "description": "Classic arcade style fast aur addictive games khelo.",
+    "icon": "category/arcade.png",
+"tags": ["Arcade Games"]
+  },
+  "archery": {
+    "title": "Archery Games",
+    "description": "Bow aur arrow se target hit karo aur apni accuracy test karo.",
+    "icon": "category/archery.png",
+"tags": ["Archery Games"]
+  },
+  "army": {
+    "title": "Army Games",
+    "description": "Military missions aur war-based army games mein participate karo.",
+    "icon": "category/army.png",
+"tags": ["Army Games"]
+  },
+  "ball": {
+    "title": "Ball Games",
+    "description": "Ball control aur skill-based games khelo aur score banao.",
+    "icon": "category/ball.png",
+"tags": ["Ball Games"]
+  },
+  "baseball": {
+    "title": "Baseball Games",
+    "description": "Baseball matches khelo aur batting skills improve karo.",
+    "icon": "category/baseball.png",
+"tags": ["Baseball Games"]
+  },
+  "battleroyal": {
+    "title": "Battle Royale Games",
+    "description": "Last man standing bano aur battle royale games mein survival dikhao.",
+    "icon": "category/battleroyal.png",
+"tags": ["Battle Royale"]
+  },
+  "building": {
+    "title": "Building Games",
+    "description": "Creative building aur construction games mein apni imagination use karo.",
+    "icon": "category/building.png",
+"tags": ["Building Games"]
+  },
+  "bird": {
+    "title": "Bird Games",
+    "description": "Bird characters ke saath fun aur flying based games enjoy karo.",
+    "icon": "category/bird.png",
+"tags": ["Bird Games"]
+  },
+  "battleship": {
+    "title": "Battleship Games",
+    "description": "Naval strategy games mein enemy ships ko destroy karo.",
+    "icon": "category/battleship.png",
+"tags": ["Battleehip Games"]
+  },
+  "bike": {
+    "title": "Bike Games",
+    "description": "High speed bike racing aur stunts wale games khelo.",
+    "icon": "category/bike.png",
+"tags": ["Bike Games"]
+  },
+  "block": {
+    "title": "Block Games",
+    "description": "Block-based puzzles aur building games mein challenge lo.",
+    "icon": "category/block.png",
+"tags": ["Block Games"]
+  },
+  "board": {
+    "title": "Board Games",
+    "description": "Classic board games jaise chess aur ludo online khelo.",
+    "icon": "category/board.png",
+"tags": ["Board Games"]
+  },
+  "boat": {
+    "title": "Boat Games",
+    "description": "Boat driving aur water adventures wale games ka maza lo.",
+    "icon": "category/boat.png",
+"tags": ["Boat Games"]
+  },
+  "bowling": {
+    "title": "Bowling Games",
+    "description": "Strike maaro aur bowling skills improve karo.",
+    "icon": "category/bowling.png",
+"tags": ["Bowling Games"]
+  },
+  "boxing": {
+    "title": "Boxing Games",
+   "description": "Ring mein fight karo aur boxing champion bano.",
+    "icon": "category/boxing.png",
+"tags": ["Boxing Games"]
+    
+  },
+  "brain": {
+    "title": "Brain Games",
+    "description": "Dimaag tez karne wale logic aur skill-based games khelo.",
+    "icon": "category/brain.png",
+"tags": ["Brain Games"]
+  },
+  "brainrot": {
+    "title": "Brainrot Games",
+    "description": "Fun, random aur addictive brainrot style games enjoy karo.",
+    "icon": "category/brainrot.png",
+"tags": ["Brainrot Games"]
+  },
+  "bubble": {
+    "title": "Bubble Games",
+    "description": "Bubble shooting aur matching games mein high score banao.",
+    "icon": "category/bubble.png",
+"tags": ["Bubble Games"]
+  },
+  "bus": {
+    "title": "Bus Games",
+    "description": "Bus driving aur passenger transport simulation games khelo.",
+    "icon": "category/bus.png",
+"tags": ["Bus Games"]
+  },
+  "cake": {
+    "title": "Cake Games",
+    "description": "Cake baking aur decorating wale fun cooking games khelo.",
+    "icon": "category/cake.png",
+"tags": ["Cake Games"]
+  },
+  "car": {
+    "title": "Car Games",
+    "description": "Car driving, racing aur stunts wale games enjoy karo.",
+    "icon": "category/car.png",
+"tags": ["Car Games"]
+  },
+  "cat": {
+    "title": "Cat Games",
+    "description": "Cute cats ke saath fun aur relaxing games khelo.",
+    "icon": "category/cat.png",
+    "tags": ["Cat Games"]
+  },
+  "checker": {
+    "title": "Checkers Games",
+    "description": "Classic checkers board game online khelo aur strategy dikhao.",
+    "icon": "category/checker.png",
+"tags": ["Checker Games"]
+  },
+  "chess": {
+    "title": "Chess Games",
+    "description": "Chess khelo aur apni strategy aur thinking skills improve karo.",
+    "icon": "category/chess.png",
+"tags": ["chess Games"]
+  },
+  "competitive": {
+    "title": "Competitive Games",
+    "description": "Competitive games mein dusron ke against compete karo aur jeeto.",
+    "icon": "category/competitive.png",
+"tags": ["Competitive Games"]
+  },
+  "christmas": {
+    "title": "Christmas Games",
+    "description": "Festive Christmas theme wale fun aur holiday games enjoy karo.",
+    "icon": "category/christmas.png",
+"tags": ["Christmas Games"]
+  },
+  "classic": {
+    "title": "Classic Games",
+    "description": "Old school aur timeless classic games ka maza lo.",
+    "icon": "category/classic.png",
+"tags": ["Classic Games"]
+  },
+  "clicker": {
+    "title": "Clicker Games",
+    "description": "Simple aur addictive clicker games khelo aur progress badhao.",
+    "icon": "category/clicker.png",
+"tags": ["Clicker Games"]
+  },
+  "co.op": {
+    "title": "Co-op Games",
+    "description": "Dost ke saath milkar teamwork wale co-op games khelo.",
+    "icon": "category/coop.png",
+"tags": ["Co-op Games"]
+  },
+  "color": {
+    "title": "Color Games",
+    "description": "Coloring aur color matching wale creative games khelo.",
+    "icon": "category/color.png",
+"tags": ["Color Games"]
+  },
+  "cooking": {
+    "title": "Cooking Games",
+    "description": "Cooking aur food making games mein chef ban jao.",
+    "icon": "category/cooking.png",
+"tags": ["Cooking Games"]
+  },
+  "cool": {
+    "title": "Cool Games",
+    "description": "Trending aur cool games ka best collection yaha milega.",
+    "icon": "category/cool.png",
+"tags": ["Cooking Games"]
+    
+  },
+  "crazy": {
+    "title": "Crazy Games",
+    "description": "Weird, fun aur crazy gameplay wale games enjoy karo.",
+    "icon": "category/crazy.png",
+"tags": ["Crazy Games"]
+  },
+  "crafting": {
+    "title": "Crafting Games",
+    "description": "Crafting aur building based creative games explore karo.",
+    "icon": "category/crafting.png",
+"tags": ["Crafting Games"]
+  },
+  "cricket": {
+    "title": "Cricket Games",
+    "description": "Batting aur bowling ke saath cricket matches khelo.",
+    "icon": "category/cricket.png",
+    "tags": ["Cricket Games"]
+  },
+  "detective": {
+    "title": "Detective Games",
+    "description": "Mystery solve karo aur detective ban kar clues dhundo.",
+    "icon": "category/detective.png",
+    "tags": ["Detective Games"]
+  },
+  "decoration": {
+    "title": "Decoration Games",
+    "description": "Ghar aur rooms ko decorate karo aur creative design banao.",
+    "icon": "category/decoration.png",
+    "tags": ["Decoration Games"]
+  },
+  "difficult": {
+    "title": "Difficult Games",
+    "description": "Hard challenges wale games khelo aur apni skills test karo.",
+    "icon": "category/difficult.png",
+    "tags": ["Difficult Games"]
+  },
+  "dinosaur": {
+    "title": "Dinosaur Games",
+    "description": "Dinosaur world explore karo aur prehistoric adventures enjoy karo.",
+    "icon": "category/dinosaur.png",
+    "tags": ["Dinosaur Games"]
+  },
+  "dirtbike": {
+    "title": "Dirt Bike Games",
+    "description": "Off-road aur dirt track racing games ka maza lo.",
+    "icon": "category/dirt.png",
+    "tags": ["Dirt Bike Games"]
+  },
+  "doctor": {
+    "title": "Doctor Games",
+    "description": "Doctor ban kar patients ka treatment karo aur hospital manage karo.",
+    "icon": "category/doctor.png",
+    "tags": ["Doctor Games"]
+  },
+  "dog": {
+    "title": "Dog Games",
+    "description": "Cute dogs ke saath fun aur pet care games khelo.",
+    "icon": "category/dog.png",
+    "tags": ["Dog Games"]
+  },
+  "dragon": {
+    "title": "Dragon Games",
+    "description": "Dragon ke saath fantasy adventures aur battles enjoy karo.",
+    "icon": "category/dragon.png",
+    "tags": ["Dragon Games"]
+  },
+  "drawing": {
+    "title": "Drawing Games",
+    "description": "Drawing aur sketching games mein apni creativity dikhao.",
+    "icon": "category/drawing.png",
+    "tags": ["Drawing Games"]
+  },
+  "dressup": {
+    "title": "Dress Up Games",
+    "description": "Characters ko stylish outfits pehnao aur fashion design karo.",
+    "icon": "category/dressup.png",
+    "tags": ["Dress Up Games"]
+  },
+  "drifting": {
+    "title": "Drifting Games",
+    "description": "Car drifting skills dikhao aur sharp turns master karo.",
+    "icon": "category/drifting.png",
+    "tags": ["Drifting Games"]
+  },
+  "driving": {
+    "title": "Driving Games",
+    "description": "Realistic driving experience ke saath roads explore karo.",
+    "icon": "category/driving.png",
+    "tags": ["Driving Games"]
+  },
+  "easter": {
+    "title": "Easter Games",
+    "description": "Easter theme wale fun aur festive games enjoy karo.",
+    "icon": "category/easter.png",
+    "tags": ["Easter Games"]
+  },
+  "easy": {
+    "title": "Easy Games",
+    "description": "Simple aur relaxing games khelo bina stress ke.",
+    "icon": "category/easy.png",
+    "tags": ["Easy Games"]
+  },
+  "education": {
+    "title": "Educational Games",
+    "description": "Learning ke saath fun games khelo aur knowledge badhao.",
+    "icon": "category/education.png",
+    "tags": ["Educational Games"]
+  },
+  "escape": {
+    "title": "Escape Games",
+    "description": "Puzzles solve karo aur escape room se bahar niklo.",
+    "icon": "category/escape.png",
+    "tags": ["Escape Games"]
+  },
+  "farm": {
+    "title": "Farm Games",
+    "description": "Farming karo, crops ugayo aur farm manage karo.",
+    "icon": "category/farm.png",
+    "tags": ["Farm Games"]
+  },
+  "fashion": {
+    "title": "Fashion Games",
+    "description": "Fashion designing aur styling games mein creativity dikhao.",
+    "icon": "category/fashion.png",
+    "tags": ["Fashion Games"]
+  },
+  "fighting": {
+    "title": "Fighting Games",
+    "description": "Combat aur fighting games mein enemies ko haro.",
+    "icon": "category/fighting.png",
+    "tags": ["Fighting Games"]
+  },
+  "firstpersonshooting": {
+    "title": "FPS Games",
+    "description": "First person shooting games mein realistic combat experience lo.",
+    "icon": "category/fps.png",
+    "tags": ["FPS Games"]
+  },
+  "fish": {
+    "title": "Fish Games",
+    "description": "Underwater adventures aur fish based games ka maza lo.",
+    "icon": "category/fish.png",
+    "tags": ["Fish Games"]
+  },
+  "food": {
+    "title": "Food Games",
+    "description": "Food making aur serving games mein chef ban jao.",
+    "icon": "category/food.png",
+    "tags": ["Food Games"]
+  },
+  "football": {
+    "title": "Football Games",
+    "description": "Football matches khelo aur goals score karo.",
+    "icon": "category/football.png",
+    "tags": ["Football Games"]
+  },
+  "funny": {
+    "title": "Funny Games",
+    "description": "Hilarious aur funny gameplay wale games enjoy karo.",
+    "icon": "category/funny.png",
+    "tags": ["Funny Games"]
+  },
+  "gta": {
+    "title": "GTA Games",
+    "description": "Open world aur GTA style action games explore karo.",
+    "icon": "category/gta.png",
+    "tags": ["GTA Games"]
+  },
+  "gamesforboys": {
+    "title": "Games for Boys",
+    "description": "Boys ke liye specially selected action aur adventure games.",
+    "icon": "category/boys.png",
+    "tags": ["Games for Boys"]
+  },
+  "gamesforgirls": {
+    "title": "Games for Girls",
+    "description": "Girls ke liye fun, fashion aur creative games ka collection.",
+    "icon": "category/girls.png",
+    "tags": ["Games for Girls"]
+  },
+  "geography": {
+    "title": "Geography Games",
+    "description": "Maps aur countries ke through geography learn karo.",
+    "icon": "category/geography.png",
+    "tags": ["Geography Games"]
+  },
+  "golf": {
+    "title": "Golf Games",
+    "description": "Golf khelo aur perfect shots ke saath score banao.",
+    "icon": "category/golf.png",
+    "tags": ["Golf Games"]
+  },
+  "html5": {
+    "title": "HTML5 Games",
+    "description": "Browser mein directly chalne wale smooth HTML5 games khelo.",
+    "icon": "category/html5.png",
+    "tags": ["HTML5 Games"]
+  },
+  "hideandseek": {
+    "title": "Hide and Seek Games",
+    "description": "Chhupne aur dhundhne wale fun games enjoy karo.",
+    "icon": "category/hideandseek.png",
+    "tags": ["Hide and Seek Games"]
+  },
+  "hair": {
+    "title": "Hair Games",
+    "description": "Hair styling aur salon games mein creativity dikhao.",
+    "icon": "category/hair.png",
+    "tags": ["Hair Games"]
+  },
+  "halloween": {
+    "title": "Halloween Games",
+    "description": "Spooky aur horror themed Halloween games khelo.",
+    "icon": "category/halloween.png",
+    "tags": ["Halloween Games"]
+  },
+  "henrystickman": {
+    "title": "Henry Stickman Games",
+    "description": "Henry Stickman ke funny aur action packed adventures khelo.",
+    "icon": "category/stickman.png",
+    "tags": ["Henry Stickman Games"]
+  },
+  "hiddenobject": {
+    "title": "Hidden Object Games",
+    "description": "Hidden items dhundo aur puzzles solve karo.",
+    "icon": "category/hidden.png",
+    "tags": ["Hidden Object Games"]
+  },
+  "hockey": {
+    "title": "Hockey Games",
+    "description": "Ice hockey matches khelo aur goals score karo.",
+    "icon": "category/hockey.png",
+    "tags": ["Hockey Games"]
+  },
+  "horse": {
+    "title": "Horse Games",
+    "description": "Horse riding aur racing games ka maza lo.",
+    "icon": "category/horse.png",
+    "tags": ["Horse Games"]
+  },
+  "hospital": {
+    "title": "Hospital Games",
+    "description": "Hospital manage karo aur patients ka treatment karo.",
+    "icon": "category/hospital.png",
+    "tags": ["Hospital Games"]
+  },
+  "hunting": {
+    "title": "Hunting Games",
+    "description": "Wild animals hunt karo aur survival skills dikhao.",
+    "icon": "category/hunting.png",
+    "tags": ["Hunting Games"]
+  },
+  "icecream": {
+    "title": "Ice Cream Games",
+    "description": "Ice cream banao aur customers ko serve karo.",
+    "icon": "category/icecream.png",
+    "tags": ["Ice Cream Games"]
+  },
+  "idle": {
+    "title": "Idle Games",
+    "description": "Idle gameplay mein automatic progress ka maza lo.",
+    "icon": "category/idle.png",
+    "tags": ["Idle Games"]
+  },
+  "intelligence": {
+    "title": "Intelligence Games",
+    "description": "IQ aur thinking skills improve karne wale games khelo.",
+    "icon": "category/intelligence.png",
+    "tags": ["Intelligence Games"]
+  },
+  "jigsaw": {
+    "title": "Jigsaw Games",
+    "description": "Jigsaw puzzles solve karo aur category complete karo.",
+    "icon": "category/jigsaw.png",
+    "tags": ["Jigsaw Games"]
+  },
+  "kid": {
+    "title": "Kids Games",
+    "description": "Bachchon ke liye safe aur fun games ka collection.",
+    "icon": "category/kids.png",
+    "tags": ["Kids Games"]
+  },
+  "logic": {
+    "title": "Logic Games",
+    "description": "Logic based puzzles solve karo aur brain sharp karo.",
+    "icon": "category/logic.png",
+    "tags": ["Logic Games"]
+  },
+  "love": {
+    "title": "Love Games",
+    "description": "Romantic aur story based love games enjoy karo.",
+    "icon": "category/love.png",
+    "tags": ["Love Games"]
+  },
+  "magic": {
+    "title": "Magic Games",
+    "description": "Magic aur fantasy powers wale games explore karo.",
+    "icon": "category/magic.png",
+    "tags": ["Magic Games"]
+  },
+  "mahjong": {
+    "title": "Mahjong Games",
+    "description": "Classic mahjong tiles match karo aur puzzles solve karo.",
+    "icon": "category/mahjong.png",
+    "tags": ["Mahjong Games"]
+  },
+  "makeup": {
+    "title": "Makeup Games",
+    "description": "Makeup aur beauty styling games mein creativity dikhao.",
+    "icon": "category/makeup.png",
+    "tags": ["Makeup Games"]
+  },
+  "makeover": {
+    "title": "Makeover Games",
+    "description": "Characters ka full makeover karo aur stylish banao.",
+    "icon": "category/makeover.png",
+    "tags": ["Makeover Games"]
+  },
+  "management": {
+    "title": "Management Games",
+    "description": "Business aur resources manage karo aur success pao.",
+    "icon": "category/management.png",
+    "tags": ["Management Games"]
+  },
+  "match3": {
+    "title": "Match 3 Games",
+    "description": "Same items match karo aur puzzles complete karo.",
+    "icon": "category/match3.png",
+    "tags": ["Match 3 Games"]
+  },
+  "matching": {
+    "title": "Matching Games",
+    "description": "Matching puzzles solve karo aur memory improve karo.",
+    "icon": "category/matching.png",
+    "tags": ["Matching Games"]
+  },
+  "math": {
+    "title": "Math Games",
+    "description": "Math problems solve karo aur skills improve karo.",
+    "icon": "category/math.png",
+    "tags": ["Math Games"]
+  },
+  "maze": {
+    "title": "Maze Games",
+    "description": "Maze puzzles solve karo aur correct path find karo.",
+    "icon": "category/maze.png",
+    "tags": ["Maze Games"]
+  },
+  "meme": {
+    "title": "Meme Games",
+    "description": "Funny meme based games enjoy karo aur haso.",
+    "icon": "category/meme.png",
+    "tags": ["Meme Games"]
+  },
+  "merge": {
+    "title": "Merge Games",
+    "description": "Items merge karo aur new upgrades unlock karo.",
+    "icon": "category/merge.png",
+    "tags": ["Merge Games"]
+  },
+  "minecraft": {
+    "title": "Minecraft Games",
+    "description": "Minecraft style building aur survival games khelo.",
+    "icon": "category/minecraft.png",
+    "tags": ["Minecraft Games"]
+  },
+  "mini": {
+    "title": "Mini Games",
+    "description": "Short aur fun mini games ka collection enjoy karo.",
+    "icon": "category/mini.png",
+    "tags": ["Mini Games"]
+  },
+  "minigolf": {
+    "title": "Mini Golf Games",
+    "description": "Mini golf khelo aur tricky levels complete karo.",
+    "icon": "category/minigolf.png",
+    "tags": ["Mini Golf Games"]
+  },
+  "mobile": {
+    "title": "Mobile Games",
+    "description": "Mobile friendly games jo smooth aur fast chale.",
+    "icon": "category/mobile.png",
+    "tags": ["Mobile Games"]
+  },
+  "monkey": {
+    "title": "Monkey Games",
+    "description": "Monkeys ke saath fun aur adventure games khelo.",
+    "icon": "category/monkey.png",
+    "tags": ["Monkey Games"]
+  },
+  "monster": {
+    "title": "Monster Games",
+    "description": "Monsters ke saath fighting aur adventure games enjoy karo.",
+    "icon": "category/monster.png",
+    "tags": ["Monster Games"]
+  },
+  "monstertruck": {
+    "title": "Monster Truck Games",
+    "description": "Monster trucks ke saath racing aur stunts karo.",
+    "icon": "category/monstertruck.png",
+    "tags": ["Monster Truck Games"]
+  },
+  "mouse": {
+    "title": "Mouse Games",
+    "description": "Mouse characters ke saath fun games khelo.",
+    "icon": "category/mouse.png",
+    "tags": ["Mouse Games"]
+  },
+  "multiplayer": {
+    "title": "Multiplayer Games",
+    "description": "Online players ke saath multiplayer games khelo.",
+    "icon": "category/multiplayer.png",
+    "tags": ["Multiplayer Games"]
+  },
+  "music": {
+    "title": "Music Games",
+    "description": "Music aur rhythm based games enjoy karo.",
+    "icon": "category/music.png",
+    "tags": ["Music Games"]
+  },
+  "new": {
+    "title": "New Games",
+    "description": "Latest aur newly added games ka collection dekho.",
+    "icon": "category/new.png",
+    "tags": ["New Games"]
+  },
+  "ninja": {
+    "title": "Ninja Games",
+    "description": "Ninja ban kar stealth aur action missions complete karo.",
+    "icon": "category/ninja.png",
+    "tags": ["Ninja Games"]
+  },
+  "number": {
+    "title": "Number Games",
+    "description": "Number based puzzles aur logic games solve karo.",
+    "icon": "category/number.png",
+    "tags": ["Number Games"]
+  },
+  "openworld": {
+    "title": "Open World Games",
+    "description": "Free roam karo aur open world games explore karo.",
+    "icon": "category/openworld.png",
+    "tags": ["Open World Games"]
+  },
+  "obbey": {
+    "title": "Obby Games",
+    "description": "Obstacle courses complete karo aur parkour challenges lo.",
+    "icon": "category/obby.png",
+    "tags": ["Obby Games"]
+  },
+  "offroad": {
+    "title": "Offroad Games",
+    "description": "Offroad tracks par driving aur racing ka maza lo.",
+    "icon": "category/offroad.png",
+    "tags": ["Offroad Games"]
+  },
+  "olympic": {
+    "title": "Olympic Games",
+    "description": "Olympic sports games mein compete karo aur medals jeeto.",
+    "icon": "category/olympic.png",
+    "tags": ["Olympic Games"]
+  },
+  "papas": {
+    "title": "Papa's Games",
+    "description": "Papa's series ke restaurant aur cooking games khelo.",
+    "icon": "category/papas.png",
+    "tags": ["Papa's Games"]
+  },
+  "parking": {
+    "title": "Parking Games",
+    "description": "Cars ko perfect park karo aur driving skills improve karo.",
+    "icon": "category/parking.png",
+    "tags": ["Parking Games"]
+  },
+  "parkour": {
+    "title": "Parkour Games",
+    "description": "Jump aur run karke parkour challenges complete karo.",
+    "icon": "category/parkour.png",
+    "tags": ["Parkour Games"]
+  },
+  "penalty": {
+    "title": "Penalty Games",
+    "description": "Football penalty shots maro aur goals score karo.",
+    "icon": "category/penalty.png",
+    "tags": ["Penalty Games"]
+  },
+  "physics": {
+    "title": "Physics Games",
+    "description": "Physics based puzzles solve karo aur logic use karo.",
+    "icon": "category/physics.png",
+    "tags": ["Physics Games"]
+  },
+  "pizza": {
+    "title": "Pizza Games",
+    "description": "Pizza banao, bake karo aur customers ko serve karo.",
+    "icon": "category/pizza.png",
+    "tags": ["Pizza Games"]
+  },
+  "platform": {
+    "title": "Platform Games",
+    "description": "Jump aur run karke platform levels complete karo.",
+    "icon": "category/platform.png",
+    "tags": ["Platform Games"]
+  },
+  "pointandclick": {
+    "title": "Point and Click Games",
+    "description": "Clues dhundo aur point-and-click puzzles solve karo.",
+    "icon": "category/pointclick.png",
+    "tags": ["Point and Click Games"]
+  },
+  "police": {
+    "title": "Police Games",
+    "description": "Police ban kar criminals ko pakdo aur missions complete karo.",
+    "icon": "category/police.png",
+    "tags": ["Police Games"]
+  },
+  "pool": {
+    "title": "Pool Games",
+    "description": "Pool table par shots maaro aur perfect aim dikhao.",
+    "icon": "category/pool.png",
+    "tags": ["Pool Games"]
+  },
+  "popular": {
+    "title": "Popular Games",
+    "description": "Sabse zyada khele jaane wale trending games yaha milega.",
+    "icon": "category/popular.png",
+    "tags": ["Popular Games"]
+  },
+  "princess": {
+    "title": "Princess Games",
+    "description": "Princess characters ke saath dress-up aur adventure games khelo.",
+    "icon": "category/princess.png",
+    "tags": ["Princess Games"]
+  },
+  "puzzle": {
+    "title": "Puzzle Games",
+    "description": "Mind challenging puzzles solve karo aur levels clear karo.",
+    "icon": "category/puzzle.png",
+    "tags": ["Puzzle Games"]
+  },
+  "quiz": {
+    "title": "Quiz Games",
+    "description": "Questions ke answers do aur apni knowledge test karo.",
+    "icon": "category/quiz.png",
+    "tags": ["Quiz Games"]
+  },
+  "rpg": {
+    "title": "RPG Games",
+    "description": "Role-playing games mein characters develop karo aur story follow karo.",
+    "icon": "category/rpg.png",
+    "tags": ["RPG Games"]
+  },
+  "racing": {
+    "title": "Racing Games",
+    "description": "High speed racing aur car challenges complete karo.",
+    "icon": "category/racing.png",
+    "tags": ["Racing Games"]
+  },
+  "ragdoll": {
+    "title": "Ragdoll Games",
+    "description": "Physics based ragdoll gameplay ka maza lo.",
+    "icon": "category/ragdoll.png",
+    "tags": ["Ragdoll Games"]
+  },
+  "restaurant": {
+    "title": "Restaurant Games",
+    "description": "Restaurant manage karo aur customers ko serve karo.",
+    "icon": "category/restaurant.png",
+    "tags": ["Restaurant Games"]
+  },
+  "retro": {
+    "title": "Retro Games",
+    "description": "Old-school retro style classic games enjoy karo.",
+    "icon": "category/retro.png",
+    "tags": ["Retro Games"]
+  },
+  "roblox": {
+    "title": "Roblox Games",
+    "description": "Roblox style worlds aur mini games explore karo.",
+    "icon": "category/roblox.png",
+    "tags": ["Roblox Games"]
+  },
+  "robot": {
+    "title": "Robot Games",
+    "description": "Robots ke saath action aur sci-fi games khelo.",
+    "icon": "category/robot.png",
+    "tags": ["Robot Games"]
+  },
+  "running": {
+    "title": "Running Games",
+    "description": "Endless running games mein speed aur reflex test karo.",
+    "icon": "category/running.png",
+    "tags": ["Running Games"]
+  },
+  "scary": {
+    "title": "Scary Games",
+    "description": "Horror aur scary games mein thrill experience karo.",
+    "icon": "category/scary.png",
+    "tags": ["Scary Games"]
+  },
+  "shooting": {
+    "title": "Shooting Games",
+    "description": "Gun aur combat based shooting games enjoy karo.",
+    "icon": "category/shooting.png",
+    "tags": ["Shooting Games"]
+  },
+  "shopping": {
+    "title": "Shopping Games",
+    "description": "Shopping aur fashion based games mein fun karo.",
+    "icon": "category/shopping.png",
+    "tags": ["Shopping Games"]
+  },
+  "simulation": {
+    "title": "Simulation Games",
+    "description": "Real-life simulation games ka realistic experience lo.",
+    "icon": "category/simulation.png",
+    "tags": ["Simulation Games"]
+  },
+  "skateboarding": {
+    "title": "Skateboarding Games",
+    "description": "Skateboard stunts karo aur tricks master karo.",
+    "icon": "category/skateboarding.png",
+    "tags": ["Skateboarding Games"]
+  },
+  "skill": {
+    "title": "Skill Games",
+    "description": "Skill based challenges complete karo aur improve karo.",
+    "icon": "category/skill.png",
+    "tags": ["Skill Games"]
+  },
+  "slime": {
+    "title": "Slime Games",
+    "description": "Slime based fun aur creative games enjoy karo.",
+    "icon": "category/slime.png",
+    "tags": ["Slime Games"]
+  },
+  "snake": {
+    "title": "Snake Games",
+    "description": "Classic snake games khelo aur high score banao.",
+    "icon": "category/snake.png",
+    "tags": ["Snake Games"]
+  },
+  "sniper": {
+    "title": "Sniper Games",
+    "description": "Sniper ban kar long range targets hit karo.",
+    "icon": "category/sniper.png",
+    "tags": ["Sniper Games"]
+  },
+  "soccer": {
+    "title": "Soccer Games",
+    "description": "Soccer matches khelo aur goals score karo.",
+    "icon": "category/soccer.png",
+    "tags": ["Soccer Games"]
+  },
+  "solitaire": {
+    "title": "Solitaire Games",
+    "description": "Classic solitaire card games khelo aur relax karo.",
+    "icon": "category/solitaire.png",
+    "tags": ["Solitaire Games"]
+  },
+  "space": {
+    "title": "Space Games",
+    "description": "Space missions aur galaxy adventures explore karo.",
+    "icon": "category/space.png",
+    "tags": ["Space Games"]
+  },
+  "sport": {
+    "title": "Sports Games",
+    "description": "Different sports games khelo aur compete karo.",
+    "icon": "category/sport.png",
+    "tags": ["Sports Games"]
+  },
+  "sort": {
+    "title": "Sort Games",
+    "description": "Items sort karo aur organized challenges complete karo.",
+    "icon": "category/sort.png",
+    "tags": ["Sort Games"]
+  },
+  "stunt": {
+    "title": "Stunt Games",
+    "description": "Crazy stunts perform karo aur extreme challenges complete karo.",
+    "icon": "category/stunt.png",
+    "tags": ["Stunt Games"]
+  },
+  "stickman": {
+    "title": "Stickman Games",
+    "description": "Stickman ke saath action aur funny adventures enjoy karo.",
+    "icon": "category/stickman.png",
+    "tags": ["Stickman Games"]
+  },
+  "story": {
+    "title": "Story Games",
+    "description": "Engaging story aur adventure based games khelo.",
+    "icon": "category/story.png",
+    "tags": ["Story Games"]
+  },
+  "strategy": {
+    "title": "Strategy Games",
+    "description": "Strategic thinking aur planning se missions complete karo.",
+    "icon": "category/strategy.png",
+    "tags": ["Strategy Games"]
+  },
+  "sudoku": {
+    "title": "Sudoku Games",
+    "description": "Classic Sudoku puzzles solve karo aur brain sharp karo.",
+    "icon": "category/sudoku.png",
+    "tags": ["Sudoku Games"]
+  },
+  "superhero": {
+    "title": "Superhero Games",
+    "description": "Superheroes ban kar city aur villains ko save karo.",
+    "icon": "category/superhero.png",
+    "tags": ["Superhero Games"]
+  },
+  "surgery": {
+    "title": "Surgery Games",
+    "description": "Surgery perform karo aur patients treat karo.",
+    "icon": "category/surgery.png",
+    "tags": ["Surgery Games"]
+  },
+  "survival": {
+    "title": "Survival Games",
+    "description": "Har environment mein survive karo aur obstacles beat karo.",
+    "icon": "category/survival.png",
+    "tags": ["Survival Games"]
+  },
+  "tank": {
+    "title": "Tank Games",
+    "description": "Tank battles khelo aur enemy destroy karo.",
+    "icon": "category/tank.png",
+    "tags": ["Tank Games"]
+  },
+  "tennis": {
+    "title": "Tennis Games",
+    "description": "Tennis matches khelo aur points score karo.",
+    "icon": "category/tennis.png",
+    "tags": ["Tennis Games"]
+  },
+  "towerdefence": {
+    "title": "Tower Defence Games",
+    "description": "Towers place karo aur enemies ko stop karo.",
+    "icon": "category/towerdefence.png",
+    "tags": ["Tower Defence Games"]
+  },
+  "tractor": {
+    "title": "Tractor Games",
+    "description": "Tractor drive karo aur farm ya offroad tasks complete karo.",
+    "icon": "category/tractor.png",
+    "tags": ["Tractor Games"]
+  },
+  "train": {
+    "title": "Train Games",
+    "description": "Train chalayo aur track par challenges complete karo.",
+    "icon": "category/train.png",
+    "tags": ["Train Games"]
+  },
+  "truck": {
+    "title": "Truck Games",
+    "description": "Truck drive karo aur delivery tasks complete karo.",
+    "icon": "category/truck.png",
+    "tags": ["Truck Games"]
+  },
+  "tycoon": {
+    "title": "Tycoon Games",
+    "description": "Business grow karo aur empire build karo.",
+    "icon": "category/tycoon.png",
+    "tags": ["Tycoon Games"]
+  },
+  "typing": {
+    "title": "Typing Games",
+    "description": "Typing skills improve karo aur speed test karo.",
+    "icon": "category/typing.png",
+    "tags": ["Typing Games"]
+  },
+  "unity": {
+    "title": "Unity Games",
+    "description": "Unity engine games enjoy karo aur interactive levels explore karo.",
+    "icon": "category/unity.png",
+    "tags": ["Unity Games"]
+  },
+  "war": {
+    "title": "War Games",
+    "description": "Battle aur combat missions complete karo.",
+    "icon": "category/war.png",
+    "tags": ["War Games"]
+  },
+  "watermelon": {
+    "title": "Watermelon Games",
+    "description": "Fruits slice karo aur fun challenges complete karo.",
+    "icon": "category/watermelon.png",
+    "tags": ["Watermelon Games"]
+  },
+  "winter": {
+    "title": "Winter Games",
+    "description": "Snow aur ice based games enjoy karo.",
+    "icon": "category/winter.png",
+    "tags": ["Winter Games"]
+  },
+  "word": {
+    "title": "Word Games",
+    "description": "Word puzzles solve karo aur vocabulary improve karo.",
+    "icon": "category/word.png",
+    "tags": ["Word Games"]
+  },
+  "worldcup": {
+    "title": "World Cup Games",
+    "description": "Football World Cup style matches khelo aur win karo.",
+    "icon": "category/worldcup.png",
+    "tags": ["World Cup Games"]
+  },
+  "wrestling": {
+    "title": "Wrestling Games",
+    "description": "Wrestling aur fight challenges complete karo.",
+    "icon": "category/wrestling.png",
+    "tags": ["Wrestling Games"]
+  },
+  "zombie": {
+    "title": "Zombie Games",
+    "description": "Zombie apocalypse mein survive karo aur fight karo.",
+    "icon": "category/zombie.png",
+    "tags": ["Zombie Games"]
+  }
+
+
+
+
+
+} 
+
+
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+  
+  
+  

@@ -105,3 +105,20 @@ iframe.addEventListener("load", () => {
 
 </body>
 </html>
+
+
+ @media (min-width: 768px) {
+.container {
+display: grid;
+grid-template-columns: repeat(auto-fill, 110px);
+gap: 17px;
+padding-top: 0 !important; /* Zero top padding */
+margin-top: -10px; /* Thoda upar shift */
+}
+
+/* 🔥 PURE 1ST ROW UP SHIFT - NO OVERLAP */
+.game-card:nth-child(-n + 7) { /* Sirf pehle 7 cards (1st row) */
+margin-top: -96px; /* White box ke saath perfect align */
+transform: none; /* No transform conflict */
+}
+}

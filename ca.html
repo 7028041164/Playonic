@@ -1,0 +1,1080 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+  <title>Playonic</title>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />  
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>  
+    body {  
+      margin: 0;  
+      background: linear-gradient(135deg, #1e3c72, #1e3c72);  
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+    }  
+  
+    .container {  
+      display: grid;  
+      grid-template-columns: repeat(auto-fill, minmax(100px, 100px));  
+      justify-content:center;  
+      gap: 17px;  
+      padding-top: 20px;  
+        
+  
+    }  
+
+/* ✅ MOBILE – 3 CARDS */
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: repeat(3, 101px);
+  }
+}
+ 
+    /* 📱 Mobile – Move Floating Widget complete control */
+@media (max-width: 767px) {
+  .poki-widget {
+    transform: 
+      translateX(-2px)   /* ➡️ Right move (mobile) */
+      translateY(0.1px)  /* ⬇️ Down move (mobile) */
+      scale(1);       /*   🔹 Mobile par normal size */
+  }
+}
+
+
+ 
+
+    
+ /*___________________________*/
+    /* ✅ FORCE FIX FOR ALL DEVICES desktop mod control*/
+
+/* 💻 Desktop = 7 cards */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(7, 110px);
+    grid-auto-flow: row;
+    margin-top: -129px;
+    height:auto;
+    gap: 17px;
+    display: grid;
+   
+  }
+      .game-card img {  
+      width: 100%;  
+      height: 100%;  
+      object-fit: cover;  
+      border-radius: 16px;  
+    
+      
+    }  
+     .game-card:first-child {
+    grid-column-start: 4;
+  }
+  }
+
+/* 💻 Desktop – Move + Resize Complete Floating Widget control */
+@media (min-width: 768px) {
+  .poki-widget {
+    transform:
+      translateX(29px)   /* ➡️ Right move */
+      translateY(3px)    /* ⬇️ Down move */
+      scale(1.1);         /* 🔍 Size increase (20% bigger) */
+  }
+}
+  
+
+
+
+ 
+   /*----------------------------*/
+   @media (max-width: 900px) and (orientation: landscape){
+  .container {
+    grid-template-columns: repeat(auto-fit, 110px);
+    grid-auto-flow: row;
+    margin-top: -129px;
+    height:auto;
+    display: grid;
+    gap: 17px;
+   
+  }
+      .game-card img {  
+      width: 100%;  
+      height: 100%;  
+      object-fit: cover;  
+      border-radius: 16px;  
+      display: block; 
+      
+    }  
+     .game-card:first-child {
+    grid-column-start: 4;
+  }
+  }
+
+            /*Poki widget landscape mode control*/
+    
+      @media (max-width: 900px) and (orientation: landscape) {
+  .poki-widget {
+    transform:
+      translateX(-10px)   /* ➡️ Right move */
+      translateY(3px)    /* ⬇️ Down move */
+      scale(1.1);         /* 🔍 Size increase (20% bigger) */
+  }
+}
+     /*___________________________*/
+  
+   
+    
+    
+   /* ✅ NORMAL CARD SAFETY */
+.game-card {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+    .game-card {  
+      border-radius: 16px;  
+      overflow: hidden;  
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);  
+      transition: transform 0.2s ease;  
+     
+        
+    }  
+  
+    .game-card:hover {  
+      transform: scale(1.05);  
+    }  
+  
+    .game-card img {  
+      width: 100%;  
+      height: 100%;  
+      object-fit: cover;  
+      border-radius: 16px;  
+      display: block; 
+      
+    }  
+  
+    footer {  
+      text-align: center;  
+      padding: 20px;  
+      background: rgba(0, 0, 0, 0.7);  
+      color: #ccc;  
+      font-size: 0.9em;  
+      margin-top: 20px;  
+    }  
+  
+    .poki-widget {  
+      position: fixed;  
+      top: 22px;  
+      left: 15px;  
+      background: white;  
+      width: 100px;  
+      height: 99px;  
+      border-radius: 16px;  
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  
+      display: flex;  
+      flex-direction: column;  
+      align-items: center;  
+      justify-content: space-between;  
+      z-index: 1000;  
+      margin-left: 15px;  
+      overflow: hidden;  
+    }  
+  
+    .logo-part img {  
+      width: 180px;  
+      height: auto;  
+      margin-bottom: 5px;  
+      margin-left: 10px;  
+    }  
+  
+    .horizontal-line {  
+      width: 80%;  
+      height: 1px;  
+      background: #ccc;  
+      margin: 0 auto 4px auto;  
+    }  
+  
+    .icon-part {  
+      display: flex;  
+      justify-content: center;  
+      align-items: center;  
+      width: 100%;  
+      gap: 10px;  
+      margin-top: 0;  
+      margin-bottom: 8px;  
+    }  
+  
+    .icon-box {  
+      display: flex;  
+      justify-content: center;  
+      align-items: center;  
+      flex: 1;  
+    }  
+  
+    .icon-box i {  
+      font-size: 26px;  
+      color: #4facfe;  
+      cursor: pointer;  
+      transition: transform 0.3s;  
+    }  
+  
+    .icon-box i:hover {  
+      transform: scale(1.2);  
+    }  
+  
+    .vertical-line {  
+      width: 1px;  
+      height: 30px;  
+      background: #ccc;  
+    }  
+  
+    /* Search Overlay */  
+    .search-overlay {  
+      display: none;  
+      position: fixed;  
+      top: 0;  
+      left: 0;  
+      width: 100%;  
+      height: 100vh;  
+      background: linear-gradient(135deg, #1e3c72, #2a5298);  
+      z-index: 2000;  
+    }  
+  
+    .search-bar {  
+      display: flex;  
+      align-items: center;  
+      padding: 10px 15px;  
+      background: white;  
+      border-radius: 12px;  
+      margin: 20px;  
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);  
+    }  
+  
+    .back-btn {  
+      background: white;  
+      color: #00bfff;  
+      font-size: 20px;  
+      padding: 6px;  
+      border-radius: 50%;  
+      cursor: pointer;  
+      margin-right: 10px;  
+    }  
+  
+.search-logo {  
+  width: 28px;  
+  height: 28px;  
+  margin-right: 8px;  
+  object-fit: contain;  
+  display: flex;  
+  align-items: center;  
+}  
+    .vertical-line-bar {  
+      width: 1px;  
+      height: 20px;  
+      background: #ccc;  
+      margin: 0 10px;  
+    }  
+  
+    .search-input {  
+      flex-grow: 1;  
+      border: none;  
+      outline: none;  
+      font-size: 16px;  
+      color: #333;  
+    }  
+  
+    .search-icon {  
+      color: #4facfe;  
+      font-size: 20px;  
+      margin-left: 10px;  
+    }  
+/*  
+ @media screen and (max-width: 767px) {  
+  .search-bar {  
+    flex-wrap: nowrap;  
+    padding: 10px 10px;  
+  }*/  
+  
+.search-logo {  
+  width: 28px;  
+  height: 28px;  
+  margin-right: 8px;  
+  object-fit: contain;  
+  display: flex;  
+  align-items: center;  
+}  
+  
+  .vertical-line-bar {  
+    display: block;  
+    margin: 0 8px;  
+    background: #ccc;  
+    width: 1px;  
+    height: 25px;  
+  }  
+  
+  .search-input {  
+    flex-grow: 1;  
+    min-width: 0;  
+  }  
+  
+  .search-icon {  
+    margin-left: 10px;  
+    font-size: 20px;  
+    color: #4facfe;  
+  }  
+    
+    
+    
+  /* Horizontal scroll containers for search overlay sections */  
+.scroll-container {  
+  display: flex;  
+  overflow-x: auto;  
+  gap: 12px;  
+  padding: 8px 4px 16px 4px;  
+  -webkit-overflow-scrolling: touch;  
+}  
+.scroll-container::-webkit-scrollbar { height: 8px; }  
+.scroll-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.25);  
+border-radius: 4px; }  
+  
+.scroll-container .game-card-inline { flex: 0 0 auto;   
+width: 110px;   
+text-align: center; }  
+  
+.scroll-container img { width: 110px;   
+height: 110px;   
+border-radius: 14px;   
+object-fit: cover; display: block;  
+   
+    
+}  
+h3 { color: #fff; }  
+    
+    
+  /* right side */    
+  .page-heading-box {    
+  margin-left: 150px; /* Widget ka width + spacing */    
+  margin-top: 3px;    
+  background: white;    
+  display: flex;    
+  padding: 10px 20px;    
+  border-radius: 16px;    
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);    
+  height: 80px;    
+  width: 180px;    
+  align-items: center;    
+  justify-content: center;    
+    
+      
+}    
+    
+.page-heading-box p {    
+  margin: 0;    
+  font-size: 18px;    
+  font-weight: bold;    
+  color: #333;    
+  text-align: center;    
+      
+}    
+    
+     
+    
+  /* suggestion card */  
+    
+
+  
+/* Default: hide on mobile */  
+/* Only for desktop screens */  
+@media screen and (min-width: 768px) {  
+  .desktop-banner-box {  
+    margin-left: 182px;  
+    margin-top: 20px;  
+    margin-right: 181px;  
+    display: flex;  
+    align-items: center;  
+    justify-content: space-between;  
+    background: white;  
+    padding: 27px 4px ;  
+    border-radius: 20px;  
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);  
+    width: calc(100% - 160px);  
+    max-width: 227px; 
+  }  
+  
+  
+  @media (max-width: 900px) and (orientation: landscape) {
+      .desktop-banner-box {
+    margin-left: 142px;  
+    margin-top: 20px;  
+    margin-right: 181px;  
+    display: flex;  
+    align-items: center;  
+    justify-content: space-between;  
+    background: white;  
+    padding: 27px 4px ;  
+    border-radius: 20px;  
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);  
+    width: calc(100% - 160px);  
+    max-width: 226px; 
+  }
+     }
+  
+  .game-banner-left img {  
+    width: 80px;  
+    height: 80px;  
+    border-radius: 14px;  
+    object-fit: cover;  
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);  
+    margin-left: 4px;  
+      
+  }  
+  
+  .game-banner-center {  
+    flex-grow: 1;  
+    margin-left: 15px;  
+  }  
+  
+  .game-banner-center h2 {  
+    font-size: 20px;  
+    color: #1e3c72;  
+    margin-left: 20px;  
+      
+  }  
+  
+  .game-banner-center p {  
+    margin: 4px 0 0;  
+    font-size: 14px;  
+    color: #777;  
+      
+  }  
+  
+  .game-banner-right i {  
+    font-size: 22px;  
+    margin-left: 15px;  
+    color: #4facfe;  
+    cursor: pointer;  
+    transition: transform 0.3s;  
+  }  
+  
+  .game-banner-right i:hover {  
+    transform: scale(1.2);  
+  }  
+  
+  /* Hide .page-heading-box */  
+  .page-heading-box {  
+    display: none;  
+  }  
+}  
+  
+/* Mobile: hide the banner */  
+@media screen and (max-width: 767px) {  
+  .desktop-banner-box {  
+    display: none;  
+  }  
+}  
+  
+ @media screen and (max-width: 768px) {  
+  .desktop-banner-box {  
+    display: none !important;  
+  }  
+}  
+  
+ /* mobile */  
+  
+ .game-title-group {  
+  text-align: center;  
+}  
+  
+.game-title-group p {  
+  margin: 0;  
+  font-size: 18px;  
+  font-weight: bold;  
+  color: #333;  
+}  
+  
+  
+  
+/* white box */  
+@media screen and (max-width: 767px) {  
+  .page-heading-box {  
+    margin-left: 145px;         /* Thoda right shift kar diya */  
+    margin-top: 24px;  
+    background: white;  
+    padding: 10px 20px;  
+    border-radius: 16px;  
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);  
+    height: 78px;  
+    width: 180px;  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;       /* 👈 Center text horizontally */  
+    justify-content: center;   /* 👈 Center text vertically */  
+    text-align: center;        /* 👈 Center-align text */  
+  }  
+  
+  .page-heading-box p {  
+    margin: 0;  
+    font-size: 18px;  
+    font-weight: bold;  
+    color: #333;  
+  }  
+  
+  
+}  
+  
+  
+  
+  
+ /* white description box */  
+  .description-section {  
+  background: white;  
+  border-radius: 16px;  
+  padding: 20px;  
+  width: 90%;  
+  max-width: 800px;  
+  margin: 40px auto;  
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);  
+  padding-top: 0px;  
+    
+}  
+  
+.desc-header {  
+  display: flex;  
+  align-items: center;  
+  gap: 15px;  
+  margin-bottom: 20px;  
+}  
+  
+.desc-icon {  
+  width: 40%;  
+  height: 40%;  
+  object-fit: cover;  
+  border-radius: 7px;  
+ /*  box-shadow: 0 2px 6px rgba(0,0,0,0.2);*/  
+   
+}  
+  
+.desc-title-box {  
+  display: flex;  
+  flex-direction: column;  
+}  
+  
+.desc-title {  
+  font-size: 24px;  
+  font-weight: bold;  
+  margin: 0;  
+  color: #222;  
+}  
+  
+  
+  
+.desc-body p {  
+  color: #333;  
+  margin-bottom: 12px;  
+  line-height: 1.6;  
+}  
+  
+.desc-body ul {  
+  padding-left: 20px;  
+  color: #333;  
+  margin-top: 10px;  
+}  
+  
+.desc-body li {  
+  margin-bottom: 8px;  
+}  
+   
+  #category-breadcrumb {  
+  font-size: 16px;  
+  color: #000000;  
+}  
+  
+#category-breadcrumb i {  
+  margin: 0 2px;  
+  font-size: 15px;  
+  color: #00B5FF;  
+    
+}  
+  /* lp*/  
+   /* 🔥 ONLY MOBILE FIRST CARD HIGHLIGHT */
+@media (max-width: 767px) {
+  .game-card.first-highlight {
+border-radius: 20px;
+/*  box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+  animation: highlightPulse 2s infinite;*/
+  position: relative;
+  grid-column: span 2;
+  grid-row: span 2;
+  }
+
+  .game-card.first-highlight img {
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  }
+}
+
+ 
+  </style>  
+</head>  
+<body>  
+    
+    
+ 
+  <!-- Search Overlay -->  
+  <div class="search-overlay" id="searchOverlay">  
+    <div class="search-bar">  
+      <div class="back-btn" id="closeSearch">  
+        <i class="fas fa-arrow-left"></i>  
+      </div>  
+      <img src="images/searchlogo.webp" alt="Playonic Logo" class="search-logo">  
+      <div class="vertical-line-bar"></div>  
+      <input type="text" class="search-input" placeholder="Search games...">  
+      <i class="fas fa-search search-icon"></i>  
+    </div>  
+  </div>  
+  <div id="searchResults"></div>
+  <!-- Floating widget -->  
+  <div class="poki-widget">
+    <div class="logo-part">
+      <img src="images/playonic.webp" alt="Logo">
+    </div>
+    <div class="horizontal-line"></div>
+    <div class="icon-part">
+      <div class="icon-box">
+       <a href="index.html">
+        <i class="fas fa-home"></i>
+      </div> </a>
+      <div class="vertical-line"></div>
+      <div class="icon-box">
+        <i class="fas fa-search search-icon-widget"></i>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+  <!-- Game Cards -->  
+
+  
+  <!-- Desktop-only Info Panel -->
+<div class="desktop-banner-box">
+
+  <div class="game-banner-center">
+    <h2>.</h2>
+  
+  </div>
+</div> 
+
+
+  
+<!-- White Box Title Next to Widget -->
+<div class="wrapper">
+ <div class="page-heading-box">
+  <div class="game-title-group">
+    <p id="pageHeading"></p>
+
+  </div>
+</div>
+</div>
+
+
+ 
+ <div class="container"></div>
+
+ 
+ 
+   
+
+
+  
+<!-- Description Section -->
+  <div class="description-section">
+    <div class="desc-header">
+      <div class="desc-title-box">
+        <p id="category-breadcrumb"></p>
+        <h1 class="desc-title" id="descTitle"></h1>
+        <img id="descIcon" class="desc-icon" src="" alt="">
+      </div>
+    </div>
+    <div class="desc-body">
+      <p id="descBody"></p>
+      <!-- static content jaise how-to-play, features list yahan aap aaage bhi rakh sakte ho -->
+      <ul id="featureList"></ul>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+   
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+<!-- 🔁 Swapped Wave + Footer -->
+<div style="position: relative; background: white;">
+  <!-- Wave (Black Now) -->
+  <div style="position: absolute; top: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0;">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="display: block; width: 100%; height: 80px;">
+<path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#000000"></path> <!-- Black wave -->
+    </svg>
+  </div>
+
+  <!-- Footer Content (White Background) -->
+  <footer style="padding: 60px 20px 30px; text-align: center; font-family: 'Segoe UI', sans-serif; background: white;">
+    <div style="margin-bottom: 15px;">
+      <img src="images/playonic.webp" alt="Playonic Logo" style="height: 80px; ">
+      <p style="font-weight: bold; font-size: 18px; margin: 10px 0 0; color: #333;">Let the world play</p>
+    </div>
+
+    <!-- Footer Links -->
+       <div style="margin: 15px 0;">
+      <a href="About.html" style="margin: 0 15px; text-decoration: none; color: #333; font-weight: bold;">About</a>
+      <a href="privacy policy.html" style="margin: 0 15px; text-decoration: none; color: #333; font-weight: bold;">Privacy Policy</a>
+      <a href="contact.html" style="margin: 0 15px; text-decoration: none; color: #333; font-weight: bold;">Contact</a>
+    </div>
+
+    <p style="font-size: 14px; color: #888; margin-top: 20px;">
+      © 2025 Playonic | Crafted with ❤️ by Aryan
+    </p>
+  </footer>
+</div>
+
+
+
+ 
+ 
+  <!-- JavaScript footer -->
+<script>
+  (function () {  
+       
+     const params = new URLSearchParams(window.location.search);  
+const category = params.get("type");  
+  
+console.log("Category:", category);  
+       
+    const searchIconWidget = document.querySelector('.search-icon-widget');  
+    const searchOverlay = document.getElementById('searchOverlay');  
+    const closeSearch = document.getElementById('closeSearch');  
+    const widget = document.querySelector('.poki-widget');  
+    const searchInput = document.querySelector('.search-input');  
+  
+    const resultContainer = document.createElement('div');  
+    resultContainer.style.padding = '10px 20px';  
+    resultContainer.style.color = 'white';  
+    if (searchOverlay) searchOverlay.appendChild(resultContainer);  
+  
+    let allGames = [];  
+    let popularGames = [];  
+ 
+    // ✅ Play count save  
+    function increasePlayCount(id) {  
+      let playCounts = JSON.parse(localStorage.getItem('playCounts') || '{}');  
+      playCounts[id] = (playCounts[id] || 0) + 1;  
+      localStorage.setItem('playCounts', JSON.stringify(playCounts));  
+      updatePopularGames();  
+    }  
+  
+    // ✅ Recently Played save  
+    function saveRecentlyPlayed(id) {  
+      let game = allGames.find(g => g.id === id);  
+      if (!game) return;  
+  
+      let recent = JSON.parse(localStorage.getItem('recentlyPlayed') || '[]');  
+      recent = recent.filter(g => g.id !== id);  
+      recent.unshift({ id: game.id, title: game.title, img: game.img });  
+      if (recent.length > 50) recent.pop();  
+  
+      localStorage.setItem('recentlyPlayed', JSON.stringify(recent));  
+      localStorage.setItem('selectedGameId', id); // ✅ yahi id view-page ke liye  
+      increasePlayCount(id);  
+    }  
+  
+    // ✅ Popular Games update (Top 10 by playCount)  
+    function updatePopularGames() {  
+      let playCounts = JSON.parse(localStorage.getItem('playCounts') || '{}');  
+      popularGames = [...allGames].sort((a, b) => {  
+        let countA = playCounts[a.id] || 0;  
+        let countB = playCounts[b.id] || 0;  
+        return countB - countA;  
+      }).slice(0, 10);  
+    }  
+  
+    // ✅ Render scroll section  
+    function renderScrollSection(title, items) {  
+      if (!resultContainer) return;  
+      const wrapper = document.createElement('div');  
+      wrapper.innerHTML = `<h3 style="margin:10px 0;">${title}</h3>`;  
+      const sc = document.createElement('div');  
+      sc.className = 'scroll-container';  
+      items.forEach(item => {  
+        const card = document.createElement('div');  
+        card.className = 'game-card-inline';  
+        card.innerHTML = `<img src="${item.img}" alt="${item.title}" style="cursor:pointer;">`;  
+  
+        card.querySelector("img").addEventListener("click", () => {  
+          saveRecentlyPlayed(item.id);  
+          window.location.href = "view-page.html";  
+        });  
+  
+        sc.appendChild(card);  
+      });  
+      wrapper.appendChild(sc);  
+      resultContainer.appendChild(wrapper);  
+    }  
+  
+    // ✅ Show default sections  
+    function showDefaultSections() {  
+      if (!resultContainer) return;  
+      resultContainer.innerHTML = '';  
+      const recent = JSON.parse(localStorage.getItem('recentlyPlayed') || '[]');  
+      if (recent.length) renderScrollSection('Recently Playing', recent);  
+      if (popularGames.length) renderScrollSection('Popular Games', popularGames);  
+    }  
+  
+    // ✅ Search Overlay open  
+    if (searchIconWidget) {  
+      searchIconWidget.addEventListener('click', () => {  
+        if (!searchOverlay || !widget) return;  
+        searchOverlay.style.display = 'block';  
+        widget.style.display = 'none';  
+        setTimeout(() => searchInput && searchInput.focus(), 250);  
+        showDefaultSections();  
+      });  
+    }  
+  
+    // ✅ Search Overlay close  
+    if (closeSearch) {  
+      closeSearch.addEventListener('click', () => {  
+        if (!searchOverlay || !widget || !resultContainer) return;  
+        searchOverlay.style.display = 'none';  
+        widget.style.display = 'flex';  
+        if (searchInput) searchInput.value = '';  
+        resultContainer.innerHTML = '';  
+      });  
+    }  
+  
+    // ✅ Search system  
+    if (searchInput) {  
+      searchInput.addEventListener('input', () => {  
+        if (!resultContainer) return;  
+        const query = (searchInput.value || '').trim().toLowerCase();  
+        resultContainer.innerHTML = '';  
+  
+        if (query === '') {  
+          showDefaultSections();  
+          return;  
+        }  
+  
+        const matched = allGames.filter(g =>  
+          (g.title && g.title.toLowerCase().includes(query)) ||  
+          (g.description && g.description.toLowerCase().includes(query)) ||  
+          (g.tags && g.tags.some(tag => tag.toLowerCase().includes(query)))  
+        );  
+  
+        if (matched.length) {  
+          const wrapper = document.createElement('div');  
+          wrapper.className = 'scroll-container';  
+          matched.forEach(game => {  
+            const card = document.createElement('div');  
+            card.className = 'game-card-inline';  
+            card.innerHTML = `<img src="${game.img}" alt="${game.title}" style="cursor:pointer;">`;  
+  
+            card.querySelector("img").addEventListener("click", () => {  
+              saveRecentlyPlayed(game.id);  
+              window.location.href = "view-page.html";  
+            });  
+  
+            wrapper.appendChild(card);  
+          });  
+          resultContainer.appendChild(wrapper);  
+        } else {  
+          resultContainer.innerHTML = `<p style="margin-top:10px;color:white">No games found</p>`;  
+        }  
+      });  
+    }  
+  
+    // ✅ Home page ke games ko bhi save karo  
+    document.querySelectorAll('.game-card a').forEach(link => {  
+      link.addEventListener('click', (e) => {  
+        const img = link.querySelector('img');  
+        if (!img) return;  
+        const game = allGames.find(g => g.img === img.getAttribute("src"));  
+        if (game) {  
+          saveRecentlyPlayed(game.id);  
+        }  
+      });  
+    });  
+  
+  })();  
+</script>
+  
+  
+
+
+
+ 
+  
+ 
+
+ <script src="games.js"></script>
+ 
+ 
+ 
+ 
+
+<!----category.json loading system----->
+ <script>
+(function () {
+
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("type");
+
+  console.log("Category:", category);
+
+  let allGames = [];
+  let popularGames = [];
+
+  Promise.all([
+    fetch("games.json").then(res => res.json()),
+    fetch("category.json").then(res => res.json())
+  ])
+  .then(([gamesData, categoryData]) => {
+
+    // ✅ CATEGORY INFO (OBJECT TYPE)
+    const info = categoryData[category];
+
+    if (!info) {
+      console.error("Category not found");
+      return;
+    }
+
+    // ✅ TEXT UPDATE
+    document.getElementById("pageHeading").textContent = info.title;
+    document.getElementById("descTitle").textContent = info.title;
+    document.getElementById("descBody").textContent = info.description;
+
+    const descIcon = document.getElementById("descIcon");
+    if (descIcon) descIcon.src = info.icon;
+
+    // ✅ DESKTOP BANNER (SAFE METHOD)// ✅ TAGS / BREADCRUMB FIX
+if (info.tags && Array.isArray(info.tags)) {
+  document.getElementById("category-breadcrumb").innerHTML =
+    `Playonic <i class="fa-solid fa-chevron-right"></i> ` +
+    info.tags.join(' <i class="fa-solid fa-chevron-right"></i> ');
+}
+    const bannerImg = document.querySelector('.desktop-banner-box .game-banner-left img');
+    const bannerTitle = document.querySelector('.desktop-banner-box .game-banner-center h2');
+
+    if (bannerImg) bannerImg.src = info.icon;
+    if (bannerTitle) bannerTitle.textContent = info.title;
+    
+
+    // ✅ FILTER GAMES
+    allGames = gamesData.filter(game => {
+      if (Array.isArray(game.category)) {
+        return game.category.includes(category);
+      } else {
+        return game.category === category;
+      }
+    });
+
+    // ✅ RENDER GAMES
+    const container = document.querySelector(".container");
+    container.innerHTML = "";
+
+    allGames.forEach((game, index) => {
+  const card = document.createElement("div");
+  card.className = "game-card";
+  
+  if (index === 0) {
+    card.classList.add("first-highlight");
+  }
+  
+  card.innerHTML = `
+    <a href="view-page.html">
+      <img src="${game.img}" alt="${game.title}">
+    </a>
+  `;
+  
+  card.addEventListener("click", () => {
+    localStorage.setItem("selectedGameId", game.id);
+  });
+  
+  container.appendChild(card);
+});
+
+
+    // ✅ POPULAR UPDATE
+    updatePopularGames();
+
+  })
+  .catch(err => {
+    console.error("❌ Error loading data:", err);
+  });
+
+  // =========================
+  // 🔥 EXTRA FUNCTIONS SAME
+  // =========================
+
+  function increasePlayCount(id) {
+    let playCounts = JSON.parse(localStorage.getItem('playCounts') || '{}');
+    playCounts[id] = (playCounts[id] || 0) + 1;
+    localStorage.setItem('playCounts', JSON.stringify(playCounts));
+    updatePopularGames();
+  }
+
+  function saveRecentlyPlayed(id) {
+    let game = allGames.find(g => g.id === id);
+    if (!game) return;
+
+    let recent = JSON.parse(localStorage.getItem('recentlyPlayed') || '[]');
+    recent = recent.filter(g => g.id !== id);
+    recent.unshift({ id: game.id, title: game.title, img: game.img });
+
+    if (recent.length > 50) recent.pop();
+
+    localStorage.setItem('recentlyPlayed', JSON.stringify(recent));
+    localStorage.setItem('selectedGameId', id);
+
+    increasePlayCount(id);
+  }
+
+  function updatePopularGames() {
+    let playCounts = JSON.parse(localStorage.getItem('playCounts') || '{}');
+
+    popularGames = [...allGames]
+      .sort((a, b) => (playCounts[b.id] || 0) - (playCounts[a.id] || 0))
+      .slice(0, 10);
+  }
+
+})();
+</script>
+
+
+ 
+   
+</body>  
+</html>  
+  
