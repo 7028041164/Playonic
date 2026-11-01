@@ -1,0 +1,247 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg,#141e30,#243b55);
+  color: white;
+  text-align: center;
+}
+
+/* SCREEN */
+.screen {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.active {
+  display: flex;
+}
+
+/* 🌟 HOME CARD */
+.homeCard {
+  background: rgba(255,255,255,0.08);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  width: 320px;
+}
+
+.homeCard h1 {
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* SELECT STYLE */
+select {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+select:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+select:focus {
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+
+#mode {
+background-color: rgb(98,94,94);
+}
+#level {
+background-color: rgb(98, 94, 94);
+width: 350px;
+}
+#timeSelect {
+background-color: rgb(98, 94, 94);
+}
+/* 🚀 BUTTON */
+.startBtn {
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg,#00c6ff,#0072ff);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.startBtn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px #00c6ff;
+}
+
+.startBtn:active {
+  transform: scale(0.95);
+}
+
+/* 🏠 ICON */
+.homeIcon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.homeIcon:hover {
+  transform: scale(1.2);
+  color: #00ffcc;
+}
+
+/* 📊 STATS */
+.stats {
+  margin-bottom: 10px;
+}
+
+/* 🌟 WORD BOX (UPGRADED) */
+#word {
+  font-size: 25px;
+  font-family: monospace;
+  letter-spacing: 1px;
+  color: #f1c40f;
+  margin-bottom: 7px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(2px);
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+  max-width: 600px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* LETTER STYLE */
+#word span {
+  padding: 0px;
+}
+
+.correct {
+  color: #72d39a;
+}
+
+.wrong {
+  color: #db675a;
+}
+
+/* ✍️ MODERN INPUT BOX */
+input {
+  padding: 16px;
+  font-size: 20px;
+  width: 340px;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.2);
+  outline: none;
+  transition: all 0.3s ease;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* placeholder */
+input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+/* focus glow */
+input:focus {
+  border-color: #00ffcc;
+  box-shadow: 
+    0 0 15px #00ffcc,
+    inset 0 0 10px rgba(0,255,204,0.3);
+  transform: scale(1.03);
+}
+
+/* 📊 PROGRESS BAR */
+.progress {
+  width: 340px;
+  height: 12px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px auto;
+}
+
+#progressBar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg,#00ffcc,#00c6ff);
+  transition: width 1s linear;
+}
+
+/* 🏆 RESULT CARD */
+.resultCard {
+  background: rgba(255,255,255,0.08);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  width: 320px;
+}
+
+.resultCard h2 {
+  margin-bottom: 20px;
+}
+
+.resultCard p {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+/* PERFORMANCE TEXT */
+#performance {
+  margin: 15px 0;
+  font-size: 22px;
+  color: #00ffcc;
+}
+
+
+ .gameTitle {
+  font-size: 35px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.mainBtn {
+  display: block;
+  margin: 15px auto;
+  padding: 15px 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  
+}
+
+.settingsBox {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.settingsBox.show {
+  display: block;
+}

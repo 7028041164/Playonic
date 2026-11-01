@@ -344,4 +344,91 @@ h3 { color: #fff; }
   
 }
 
+ #voiceSearchBtn{
+  font-size:26px;
+  color:#4facfe;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+#voiceSearchBtn.listening{
+  color:#00ffcc;
+  transform:scale(1.15);
+}
   
+
+/* =========================
+   🔥 ONLY SEARCH RESULTS
+========================= */
+
+
+.search-result-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  margin-bottom: 14px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+/* Hover */
+.search-result-card:hover {
+  transform: scale(1.02);
+}
+
+/* IMAGE */
+.search-result-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* TEXT AREA */
+.search-game-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* GAME TITLE */
+.search-game-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d2240;
+  line-height: 1.2;
+}
+
+/* 🔥 DEVELOPER NAME */
+.search-game-info .search-developer {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #8d8d8d;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* OPTIONAL TEXT */
+.search-game-info p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #777;
+}
+
+#search-result-card .scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+#search-result-card {
+  height: 86vh;
+  overflow-y: auto;
+}
+#voiceBtn{
+  font-size: 30px;
+}

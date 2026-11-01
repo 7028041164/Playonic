@@ -3,9 +3,23 @@
 <head>  
   <meta charset="UTF-8" />  
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-  <title>Playonic</title>  
+  <title>viewport</title>  
+  
+  
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MB39LPJG4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    
+    gtag('config', 'G-MB39LPJG4J');
+  </script>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />  
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
   
   <style>  
     body {
@@ -14,13 +28,76 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 100px));
-      justify-content: center;
-      gap: 17px;
-      padding-top: 20px;
-    }
+    .container {  
+      display: grid;  
+      grid-template-columns: repeat(auto-fill, minmax(100px, 100px));  
+      justify-content:center;  
+      gap: 17px;  
+      padding-top: 20px;  
+      
+ 
+    }  
+    
+    
+    /* ✅ MOBILE – 3 CARDS */
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: repeat(3, 101px);
+  }
+}
+ 
+    /* 📱 Mobile – Move Floating Widget complete control */
+@media (max-width: 767px) {
+  .poki-widget {
+    transform: 
+      translateX(1.5px)   /* ➡️ Right move (mobile) */
+      translateY(1px)  /* ⬇️ Down move (mobile) */
+      scale(1);       /*   🔹 Mobile par normal size */
+  }
+}
+
+
+ 
+
+    
+ /*___________________________*/
+    /* ✅ FORCE FIX FOR ALL DEVICES desktop mod control*/
+
+/* 💻 Desktop = 7 cards */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(7, 110px);
+  }
+}
+
+/* 💻 Desktop – Move + Resize Complete Floating Widget control */
+@media (min-width: 768px) {
+  .poki-widget {
+    transform:
+      translateX(34px)   /* ➡️ Right move */
+      translateY(8px)    /* ⬇️ Down move */
+      scale(1.1);         /* 🔍 Size increase (20% bigger) */
+  }
+}
+  
+
+   /*----------------------------*/
+
+    
+      /* 📱 Landscape Mode – Poki Widget Control */
+@media (max-width: 900px) and (orientation: landscape) {
+  .poki-widget {
+    transform: 
+      translateX(19px)  /* ➡️ Left move */
+      translateY(3px)     /* ⬇️ Down move */
+      scale(1);         /* 🔍 Slightly bigger */
+  }
+}
+ 
+     /*___________________________*/
+  
+   
+    
 
     .game-card {
       border-radius: 16px;
@@ -270,7 +347,7 @@ h3 { color: #fff; }
       max-width: 500px;
       margin: 20px auto 10px;
       position: relative;
-      border-radius: 20px;
+      border-radius: 30px;
       overflow: hidden;
       box-shadow:none;
     }
@@ -313,23 +390,65 @@ h3 { color: #fff; }
   text-align: left;
 }
 
+/* Suggested Games Grid */
+@media (min-width: 768px) {
 .suggested-games {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(7, 110px); /* Exactly 7 cards */
   justify-content: center;
-  margin-top: 40px
+  gap: 15px;
+  margin-top: 40px;
 }
 
 .suggested-games a img {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 16px;
   object-fit: cover;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease;
 }
-
+    }
+   @media (max-width: 768px) {  
+.suggested-games {  
+  display: flex;  
+  flex-wrap: wrap;  
+  gap: 15px;  
+  justify-content: center;  
+  margin-top: 40px  
+}  
+  
+.suggested-games a img {  
+  width: 100px;  
+  height: 100px;  
+  border-radius: 16px;  
+  object-fit: cover;  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);  
+  transition: transform 0.2s ease;  
+}  }
+  
+  
+     @media (max-width: 900px) and (orientation: landscape) {  
+.suggested-games {  
+  display: flex;  
+  flex-wrap: wrap;  
+  gap: 15px;  
+  justify-content: center;  
+  margin-top: 40px  
+}  
+  
+.suggested-games a img {  
+  width: 100px;  
+  height: 100px;  
+  border-radius: 16px;  
+  object-fit: cover;  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);  
+  transition: transform 0.2s ease;  
+}  
+       
+       
+     }
+  
 .suggested-games a img:hover {
   transform: scale(1.05);
 }
@@ -338,17 +457,17 @@ h3 { color: #fff; }
 /* Only for desktop screens */
 @media screen and (min-width: 768px) {
   .desktop-banner-box {
-    margin-left: 145px;
+    margin-left: 180px;
     margin-top: 4px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: white;
-    padding: 8px 4px;
+    padding: 12px 4px;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     width: calc(100% - 160px);
-    max-width: 760px;
+    max-width: 725px;
     
   }
 
@@ -397,6 +516,70 @@ h3 { color: #fff; }
   }
 }
 
+
+
+@media screen and (min-width: 768px) and (orientation:landscape){
+  .desktop-banner-box {
+    margin-left: 160px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 9px 4px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    width: calc(100% - 160px);
+    max-width: 580px;
+    
+  }
+
+  .game-banner-left img {
+    width: 80px;
+    height: 80px;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin-left: 4px;
+    
+  }
+
+  .game-banner-center {
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+
+  .game-banner-center h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #1e3c72;
+  }
+
+  .game-banner-center p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #777;
+  }
+
+  .game-banner-right i {
+    font-size: 22px;
+    margin-left: 15px;
+    color: #4facfe;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .game-banner-right i:hover {
+    transform: scale(1.2);
+  }
+
+  /* Hide .page-heading-box */
+  .page-heading-box {
+    display: none;
+  }
+}
+
+
 /* Mobile: hide the banner */
 @media screen and (max-width: 767px) {
   .desktop-banner-box {#42445A
@@ -433,7 +616,7 @@ h3 { color: #fff; }
 /* white box */
 @media screen and (max-width: 767px) {
   .page-heading-box {
-    margin-left: 150px;         /* Thoda right shift kar diya */
+    margin-left: 145px;         /* Thoda right shift kar diya */
     margin-top: 3px;
     background: white;
     padding: 10px 20px;
@@ -490,7 +673,7 @@ h3 { color: #fff; }
   width: 40%;
   height: 40%;
   object-fit: cover;
-  border-radius: 7px;
+  border-radius: 20px;
  /*  box-shadow: 0 2px 6px rgba(0,0,0,0.2);*/
  
 }
@@ -541,7 +724,82 @@ h3 { color: #fff; }
   
 }
   /* lp*/
- 
+
+/* =========================
+   🔥 ONLY SEARCH RESULTS
+========================= */
+
+.search-result-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  margin-bottom: 14px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+/* Hover */
+.search-result-card:hover {
+  transform: scale(1.02);
+}
+
+/* IMAGE */
+.search-result-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* TEXT AREA */
+.search-game-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* GAME TITLE */
+.search-game-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d2240;
+  line-height: 1.2;
+}
+
+/* 🔥 DEVELOPER NAME */
+.search-game-info .search-developer {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #8d8d8d;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* OPTIONAL TEXT */
+.search-game-info p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #777;
+}
+
+#search-result-card .scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+#search-result-card {
+  height: 86vh;
+  overflow-y: auto;
+}
+ #voiceSearchBtn{
+   font-size: 30px;
+   
+ }
   </style>  
 </head>  
 <body>  
@@ -557,10 +815,10 @@ h3 { color: #fff; }
       <img src="images/searchlogo.webp" alt="Playonic Logo" class="search-logo">  
       <div class="vertical-line-bar"></div>  
       <input type="text" class="search-input" placeholder="Search games...">  
-      <i class="fas fa-search search-icon"></i>  
+   <i class="fas fa-microphone-lines" id="voiceSearchBtn"></i>
     </div>  
   </div>  
-  <div id="searchResults"></div>
+  <div id="search-result-card"></div>
   <!-- Floating widget -->  
   <div class="poki-widget">
     <div class="logo-part">
@@ -590,8 +848,6 @@ h3 { color: #fff; }
   <!-- Game Cards -->  
   <div class="container">  
       
-      
-<div class="game-card">  
   </div>  
       
       
@@ -744,10 +1000,12 @@ h3 { color: #fff; }
     const widget = document.querySelector('.poki-widget');
     const searchInput = document.querySelector('.search-input');
 
-    const resultContainer = document.createElement('div');
-    resultContainer.style.padding = '10px 20px';
-    resultContainer.style.color = 'white';
-    if (searchOverlay) searchOverlay.appendChild(resultContainer);
+    const resultContainer =
+  document.getElementById('search-result-card');
+
+resultContainer.style.padding = '10px 20px';
+resultContainer.style.color = 'white';
+if (searchOverlay) searchOverlay.appendChild(resultContainer);
 
     let allGames = [];
     let popularGames = [];
@@ -1021,10 +1279,9 @@ ${game.title}`;
  
  
 <!-- 🔹 Game Overlay (Iframe System) -->
-<!-- 🔹 Game Overlay -->
 <!-- ===== Game Overlay (paste once in view-page.html) ===== -->
 <div id="gameOverlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:#0d2b4a; z-index:9980;">
-  <iframe id="gameIframe" src="" allowfullscreen style="border:none; width:100vw; height:100vh; display:block;"></iframe>
+  <iframe id="gameIframe" src="load.html" allowfullscreen style="border:none; width:100vw; height:100vh; display:block;"></iframe>
   
   <!-- Back Button -->
   <div id="floatingBackBtn" style="position:fixed; top:50px; left:-10px; z-index:10001; cursor:grab; user-select:none; display:flex; align-items:center; transition:top 0.1s ease-out;">
@@ -1043,94 +1300,158 @@ ${game.title}`;
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {  
+document.addEventListener("DOMContentLoaded", function() {  
   const overlay = document.getElementById('gameOverlay');  
   const iframe = document.getElementById('gameIframe');  
   const backBtn = document.getElementById('floatingBackBtn');  
-  const playBtn = document.getElementById('playNowbtn'); 
+  const playBtn = document.getElementById('playNowbtn');
+  const mobileWarning = document.getElementById('mobileWarning');
+  const continueBtn = document.getElementById('continueBtn');
 
   let currentGameLink = null;
+  let currentGameData = null;
 
-  // Get the current game's link from localStorage and JSON  
-  fetch('games.json')  
-    .then(res => res.json())  
-    .then(games => {  
-      const gameID = localStorage.getItem('selectedGameId');  
-      const game = games.find(g => g.id == gameID);  
-      if (game) currentGameLink = game.link;  
-    });  
+  // Mobile detect
+  function isMobile() {
+    return window.innerWidth <= 767 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
 
-  // Play button event  
-  if (playBtn) {  
-    playBtn.addEventListener('click', async function(e) {  
-      e.preventDefault();  
-      e.stopImmediatePropagation();  
-      e.stopPropagation();  
+  // Load game data
+  fetch('games.json').then(res => res.json()).then(games => {
+    const gameID = localStorage.getItem('selectedGameId');
+    currentGameData = games.find(g => g.id == gameID);
+    if (currentGameData) currentGameLink = currentGameData.link;
+  });
 
-      if (currentGameLink) {  
-        overlay.style.display = 'block';  
-        document.body.style.overflow = 'hidden';  
-        setTimeout(() => {  
-          iframe.src = currentGameLink;  
-        }, 120);  
+  // Play button
+let gameStartTime = null; // ✅ global variable
 
-        // FULLSCREEN request WITH fallback  
-        try {
-          if (overlay.requestFullscreen) {
-            await overlay.requestFullscreen();
-          } else if (overlay.webkitRequestFullscreen) { 
-            await overlay.webkitRequestFullscreen();
-          } else if (overlay.msRequestFullscreen) { 
-            await overlay.msRequestFullscreen();
-          } else {
-            // Fullscreen not supported: do nothing, still show overlay  
-          }
-        } catch(e) {
-          // Ignore fullscreen errors. Overlay still visible.
-        }
+// Play button
+if (playBtn) {
+  playBtn.addEventListener('click', async function(e) {
+    e.preventDefault(); e.stopImmediatePropagation(); e.stopPropagation();
 
-      } else {  
-        alert("Game link not found!");  
-      }  
-      return false;  
-    }, true);  
-  }  
-
-  // Back button: close overlay and clear iframe  
-  backBtn.addEventListener('click', async function() {  
-    // Exit fullscreen if active  
-    if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
-      if (document.exitFullscreen) {
-        await document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-        await document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) {
-        await document.msExitFullscreen();
-      }
+    if (!currentGameLink || !currentGameData) {
+      alert("Game not found!");
+      return false;
     }
-    iframe.src = '';  
-    overlay.style.display = 'none';  
-    document.body.style.overflow = '';  
-  });  
 
-  // Vertical drag for back button  
-  let isDragging = false, startY = 0, startTop = 0;  
-  function startDrag(y) { isDragging = true; startY = y; startTop = parseInt(window.getComputedStyle(backBtn).top,10);}  
-  function drag(y) {  
-    if (!isDragging) return;  
-    let newTop = startTop + (y - startY);  
-    const maxTop = window.innerHeight - backBtn.offsetHeight - 10;  
-    if (newTop < 10) newTop = 10;  
-    if (newTop > maxTop) newTop = maxTop;  
-    backBtn.style.top = newTop + 'px';  
-  }  
-  function stopDrag() { isDragging = false; }  
-  backBtn.addEventListener('mousedown', e => startDrag(e.clientY));  
-  document.addEventListener('mousemove', e => drag(e.clientY));  
-  document.addEventListener('mouseup', stopDrag);  
-  backBtn.addEventListener('touchstart', e => startDrag(e.touches[0].clientY));  
-  document.addEventListener('touchmove', e => drag(e.touches[0].clientY));  
-  document.addEventListener('touchend', stopDrag);  
+    const warningMode = currentGameData.warningMode || "none";
+    let showWarning = false;
+
+    if (currentGameData.desktopOnly === true) {
+      if (warningMode === "always") showWarning = true;
+      else if (warningMode === "mobile-only" && isMobile()) showWarning = true;
+      else if (warningMode === "desktop-only" && !isMobile()) showWarning = true;
+    }
+
+    if (showWarning) {
+      mobileWarning.style.display = 'flex';
+      return false;
+    }
+
+    // ✅ GAME START TRACK
+    gameStartTime = Date.now();
+
+    if (typeof gtag === "function") {
+      gtag('event', 'game_play', {
+        game_name: currentGameData.title,
+        game_id: currentGameData.id
+      });
+    }
+
+    overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => { iframe.src = currentGameLink; }, 120);
+
+    try {
+      if (overlay.requestFullscreen) await overlay.requestFullscreen();
+      else if (overlay.webkitRequestFullscreen) await overlay.webkitRequestFullscreen();
+    } catch(e) {}
+
+    return false;
+  }, true);
+}
+
+// Continue button (warning ke baad)
+if (continueBtn) {
+  continueBtn.addEventListener('click', () => {
+    mobileWarning.style.display = 'none';
+
+    // ✅ GAME START TRACK AGAIN
+    gameStartTime = Date.now();
+
+    if (typeof gtag === "function") {
+      gtag('event', 'game_play', {
+        game_name: currentGameData.title,
+        game_id: currentGameData.id
+      });
+    }
+
+    overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => { iframe.src = currentGameLink; }, 120);
+  });
+}
+
+// Back button (game close)
+if (backBtn) {
+  backBtn.addEventListener('click', async function() {
+
+    // ✅ TIME TRACK
+    if (typeof gtag === "function" && gameStartTime && currentGameData) {
+      let timeSpent = Math.floor((Date.now() - gameStartTime) / 1000);
+
+      gtag('event', 'game_time', {
+        game_name: currentGameData.title,
+        game_id: currentGameData.id,
+        time_seconds: timeSpent
+      });
+    }
+
+    if (document.fullscreenElement || document.webkitFullscreenElement) {
+      if (document.exitFullscreen) await document.exitFullscreen();
+      else if (document.webkitExitFullscreen) await document.webkitExitFullscreen();
+    }
+
+    iframe.src = '';
+    overlay.style.display = 'none';
+    mobileWarning.style.display = 'none';
+    document.body.style.overflow = '';
+  });
+}
+
+  // Back button
+  if (backBtn) {
+    backBtn.addEventListener('click', async function() {
+      if (document.fullscreenElement || document.webkitFullscreenElement) {
+        if (document.exitFullscreen) await document.exitFullscreen();
+        else if (document.webkitExitFullscreen) await document.webkitExitFullscreen();
+      }
+      iframe.src = ''; overlay.style.display = 'none';
+      mobileWarning.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  }
+
+  // Draggable back button
+  let isDragging = false, startY = 0, startTop = 0;
+  function startDrag(y) { isDragging = true; startY = y; startTop = parseInt(window.getComputedStyle(backBtn).top,10); }
+  function drag(y) {
+    if (!isDragging) return;
+    let newTop = startTop + (y - startY);
+    const maxTop = window.innerHeight - backBtn.offsetHeight - 10;
+    newTop = Math.max(10, Math.min(newTop, maxTop));
+    backBtn.style.top = newTop + 'px';
+  }
+  function stopDrag() { isDragging = false; }
+  
+  backBtn.addEventListener('mousedown', e => startDrag(e.clientY));
+  document.addEventListener('mousemove', e => drag(e.clientY));
+  document.addEventListener('mouseup', stopDrag);
+  backBtn.addEventListener('touchstart', e => startDrag(e.touches[0].clientY), {passive: false});
+  document.addEventListener('touchmove', e => drag(e.touches[0].clientY), {passive: false});
+  document.addEventListener('touchend', stopDrag);
 });
 </script>
 
@@ -1150,8 +1471,757 @@ ${game.title}`;
     iframes.forEach(iframe => observer.observe(iframe));
   });
 </script>
+  
+   <!-- Mobile Warning Popup -->
+<div id="mobileWarning" class="warning-popup" style="display:none;">
+  <div class="warning-box">
+    <h2>⚠️ Desktop Mode Required</h2>
+    <p>
+      This game runs only in <b>Desktop Mode</b>.<br>
+      Please enable <b>"Desktop Site"</b> in your browser settings and reload for best experience.
+    </p>
+    <button id="continueBtn">I Understand</button>
+  </div>
+</div>
+ <style>
+   /* Mobile Warning Popup */
+.warning-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+}
+
+.warning-box {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #ffffff;
+  padding: 25px 20px;
+  border-radius: 16px;
+  text-align: center;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s ease-in-out;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.warning-box h2 {
+  margin-bottom: 12px;
+  color: #facc15;
+  font-size: 22px;
+}
+
+.warning-box p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #e5e7eb;
+  margin-bottom: 15px;
+}
+
+.warning-box button {
+  padding: 12px 28px;
+  border: none;
+  background: linear-gradient(135deg, #4facfe, #00bfff);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.warning-box button:hover {
+  background: linear-gradient(135deg, #00bfff, #4facfe);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+ </style>
+
+
+
+ <script>
+/* =========================
+   🎤 PLAYONIC SMART AI SEARCH
+========================= */
+
+const API_KEY =
+"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";
+
+const voiceBtn =
+document.getElementById("voiceSearchBtn");
+
+/* =========================
+   🎤 VOICE SYSTEM
+========================= */
+
+if ('webkitSpeechRecognition' in window) {  
+  
+  const recognition =  
+    new webkitSpeechRecognition();  
+  
+  recognition.lang = "en-IN";  
+  
+  recognition.continuous = false;  
+  
+  recognition.interimResults = false;  
+  
+  voiceBtn.addEventListener("click", () => {  
+  
+    console.log("🎤 Listening...");  
+  
+    recognition.start();  
+  
+    voiceBtn.classList.add("listening");  
+  
+  });  
+  
+  recognition.onresult = async function(event) {  
+  
+    const transcript =  
+      event.results[0][0].transcript;  
+  
+    console.log("🎤 USER:", transcript);  
+  
+    await smartSearch(transcript);  
+  
+  };  
+  
+  recognition.onend = function() {  
+  
+  console.log("🛑 Listening End");  
+  
+  // 🔥 REMOVE GREEN EFFECT  
+  voiceBtn.classList.remove(  
+    "listening"  
+  );  
+  
+  // 🔥 CLOSE POPUP  
+  const popup =  
+    document.getElementById(  
+      "voicePopup"  
+    );  
+  
+  if (popup) {  
+  
+    popup.style.display =  
+      "none";  
+  
+  }  
+  
+};  
+recognition.onerror = function() {  
+    
+  voiceBtn.classList.remove(  
+    "listening"  
+  );  
+    
+  const popup =  
+    document.getElementById(  
+      "voicePopup"  
+    );  
+    
+  if (popup) {  
+      
+    popup.style.display =  
+      "none";  
+      
+  }  
+    
+};  
+  
+}  
+  
+
+/* =========================
+   🧠 SMART SEARCH
+========================= */
+
+async function smartSearch(userText) {
+
+  try {
+
+    // 🔥 OPEN SEARCH OVERLAY
+    document
+      .querySelector(".search-icon-widget")
+      .click();
+
+    await wait(300);
+
+    const searchInput =
+      document.querySelector(".search-input");
+
+    /* =========================
+       🔥 STEP 1
+       EXTRACT MAIN WORD
+    ========================== */
+
+    let cleanWord =
+      userText
+      .toLowerCase()
+      .replace(/games|game/g, "")
+      .trim();
+
+    console.log(
+  "🎯 MAIN WORD:",
+  cleanWord
+);
+
+/* =========================
+   🧠 HINGLISH UNDERSTANDING
+========================= */
+
+const meaningMap = {
+  
+  // 🎯 ARCHERY
+  "dhanush": "archery",
+  "teer": "archery",
+  "bow": "archery",
+  
+  // 🚗 CAR
+  "gaadi": "car",
+  "car": "car",
+  "driving": "driving",
+  "bike": "bike",
+  
+  // 🧠 BRAIN
+  "brain": "brain",
+  "dimag": "brain",
+  "paheli": "puzzle",
+  
+  // 🚆 TRAIN
+  "train": "train",
+  "rail": "train",
+  
+  // 🔫 SHOOTING
+  "gun": "gun",
+  "bandook": "gun",
+  
+  // 👻 HORROR
+  "darawna": "horror",
+  "bhoot": "horror"
+  
+};
+
+/* 🔥 FIND REAL MEANING */
+
+Object.keys(meaningMap)
+  .forEach(word => {
+    
+    if (
+      cleanWord.includes(word)
+    ) {
+      
+      cleanWord =
+        meaningMap[word];
+      
+    }
+    
+  });
+
+console.log(
+  "🧠 MEANING:",
+  cleanWord
+);
+
+    // 🔥 SEARCH ORIGINAL WORD
+    searchInput.value = cleanWord;
+
+    searchInput.dispatchEvent(
+      new Event("input", {
+        bubbles: true
+      })
+    );
+
+    await wait(500);
+
+    // 🔥 CHECK RESULTS
+    let results =
+document.querySelectorAll(
+  ".search-result-card"
+);
+
+    console.log(
+      "📦 RESULTS:",
+      results.length
+    );
+
+    // ✅ ENOUGH RESULTS
+    if (results.length >= 1) {
+
+      console.log(
+        "✅ Enough Results Found"
+      );
+
+      return;
+
+    }
+
+    console.log(
+      "⚡ Few Results → AI Related Keyword"
+    );
+
+  
+
+
+   /* =========================
+       🤖 AI RELATED SEARCH
+    ========================== */
+
+    const response = await fetch(
+      "https://openrouter.ai/api/v1/chat/completions",
+      {
+        method: "POST",
+
+        headers: {
+
+          "Authorization":
+            `Bearer ${API_KEY}`,
+
+          "Content-Type":
+            "application/json"
+
+        },
+
+        body: JSON.stringify({
+
+          model:
+            "openai/gpt-3.5-turbo",
+
+          messages: [
+
+            {
+              role: "system",
+
+              content:
+`
+Convert game category
+into ONE better related keyword.
+
+Examples:
+
+brain -> puzzle
+car -> racing
+gun -> shooting
+bike -> racing
+train -> driving
+horror -> horror
+
+Return ONLY ONE keyword.
+`
+            },
+
+            {
+              role: "user",
+              content: cleanWord
+            }
+
+          ],
+
+          max_tokens: 10,
+          temperature: 0.2
+
+        })
+
+      }
+    );
+
+    const data =
+      await response.json();
+
+    console.log(
+      "🤖 AI RESPONSE:",
+      data
+    );
+
+    if (!data.choices) {
+
+      return;
+
+    }
+
+    // 🔥 AI KEYWORD
+    let keyword =
+      data.choices[0]
+      .message.content
+      .toLowerCase()
+      .trim();
+
+    console.log(
+      "🎯 AI KEYWORD:",
+      keyword
+    );
+
+    // 🔥 FINAL SEARCH
+    searchInput.value = keyword;
+
+    searchInput.dispatchEvent(
+      new Event("input", {
+        bubbles: true
+      })
+    );
+
+  } catch (err) {
+
+    console.log(
+      "❌ ERROR:",
+      err
+    );
+
+  }
+
+}
+/* =========================
+   ⏳ WAIT FUNCTION
+========================= */
+
+function wait(ms) {
+
+  return new Promise(resolve =>
+    setTimeout(resolve, ms)
+  );
+
+}
+</script>
+
+
+<!-- 🎤 VOICE POPUP -->
+
+<div id="voicePopup">
+
+  <div class="voice-box">
+
+    <div class="voice-circle">
+      <i class="fas fa-microphone"></i>
+    </div>
+
+    <h2>Listening...</h2>
+
+    <p id="voiceText">
+      Speak game name
+    </p>
+
+  </div>
+
+</div>
+
+<style>
+
+#voicePopup{
+
+position:fixed;
+inset:0;
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+background:rgba(0,0,0,0.35);
+
+z-index:999999;
+
+backdrop-filter:blur(3px);
+
+}
+
+.voice-box{
+
+width:280px;
+height:280px;
+
+background:#1b1b1b;
+
+border-radius:28px;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+color:white;
+
+}
+
+.voice-circle{
+
+width:95px;
+height:95px;
+
+border-radius:50%;
+
+border:2px solid white;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+animation:pulse 1.5s infinite;
+
+}
+
+.voice-circle i{
+
+font-size:40px;
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+</style>
+ <script>
+
+/* =========================
+   🎤 PLAYONIC FINAL VOICE SEARCH
+========================= */
+
+
+const voicePopup =
+document.getElementById(
+  "voicePopup"
+);
+
+const voiceText =
+document.getElementById(
+  "voiceText"
+);
+
+if (
+  'webkitSpeechRecognition'
+  in window
+) {
+
+  const recognition =
+    new webkitSpeechRecognition();
+
+  recognition.lang = "en-IN";
+
+  recognition.continuous = false;
+
+  recognition.interimResults = true;
+
+  let isListening = false;
+
+  /* =========================
+     🎤 BUTTON CLICK
+  ========================== */
+
+   voiceBtn.addEventListener(
+    "click",
+    () => {
+
+      // already listening
+      if (isListening)
+        return;
+
+      isListening = true;
+
+      // GREEN EFFECT
+      voiceBtn.classList.add(
+        "listening"
+      );
+
+      // OPEN POPUP
+      voicePopup.style.display =
+        "flex";
+
+      // TEXT
+      voiceText.innerText =
+        "🎤 Speak Game...";
+
+      try {
+
+        // DIRECT START
+        recognition.start();
+
+        console.log(
+          "🎤 Listening Started"
+        );
+
+      } catch(err) {
+
+        console.log(err);
+
+        stopVoiceUI();
+
+      }
+
+    }
+  );
+
+     
+
+  /* =========================
+     🎤 LIVE RESULT
+  ========================== */
+
+  recognition.onresult =
+    function(event) {
+
+      let transcript = "";
+
+      for (
+        let i = event.resultIndex;
+        i < event.results.length;
+        i++
+      ) {
+
+        transcript +=
+          event.results[i][0]
+          .transcript;
+
+      }
+
+      voiceText.innerText =
+        transcript;
+
+      console.log(
+        "🎤 USER:",
+        transcript
+      );
+
+      // FINAL RESULT
+      if (
+        event.results[0].isFinal
+      ) {
+
+        smartSearch(
+          transcript
+        );
+
+      }
+
+    };
+
+  /* =========================
+     🎤 ERROR
+  ========================== */
+
+  recognition.onerror =
+    function(event) {
+
+      console.log(
+        "❌ Voice Error:",
+        event.error
+      );
+
+      stopVoiceUI();
+
+    };
+
+  /* =========================
+     🎤 END
+  ========================== */
+
+  recognition.onend =
+    function() {
+
+      console.log(
+        "🛑 Listening End"
+      );
+
+      stopVoiceUI();
+
+    };
+
+  /* =========================
+     🔥 STOP UI
+  ========================== */
+
+  function stopVoiceUI() {
+
+    isListening = false;
+
+    // REMOVE GREEN
+    voiceBtn.classList.remove(
+      "listening"
+    );
+
+    // CLOSE POPUP
+    voicePopup.style.display =
+      "none";
+
+  }
+
+}
+
+</script>
+
+
+<script>
+/* =========================
+   🔥 FIX SEARCH OVERLAY BACK ISSUE
+========================= */
+
+window.addEventListener("pageshow", function () {
+
+  const searchOverlay =
+    document.getElementById("searchOverlay");
+
+  const widget =
+    document.querySelector(".poki-widget");
+
+  const searchInput =
+    document.querySelector(".search-input");
+
+  const resultContainer =
+    document.getElementById("search-result-card");
+
+  // ✅ Force close overlay
+  if (searchOverlay) {
+    searchOverlay.style.display = "none";
+  }
+
+  // ✅ Show floating widget again
+  if (widget) {
+    widget.style.display = "flex";
+  }
+
+  // ✅ Clear input
+  if (searchInput) {
+    searchInput.value = "";
+  }
+
+  // ✅ Clear old results
+  if (resultContainer) {
+    resultContainer.innerHTML = "";
+  }
+
+  // ✅ Restore body scroll
+  document.body.style.overflow = "auto";
+
+});
+</script>
  
-   
+
+
 </body>  
 </html>  
   

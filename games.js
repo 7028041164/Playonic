@@ -1,55 +1,186 @@
 let allGames = [];
 
-// JSON load
+// JSON LOAD
 fetch("games.json")
   .then(res => res.json())
   .then(data => {
+    
     allGames = data;
-    console.log("Games loaded:", allGames);
+    
+    console.log(
+      "✅ Games Loaded:",
+      allGames.length
+    );
+    
   })
-  .catch(err => console.error("Error loading games.json", err));
-
-// Search function
-function searchGames(query) {
-  query = query.trim().toLowerCase();
-  if (!query) return [];
-
-  return allGames.filter(game =>
-    game.title.toLowerCase().includes(query) ||
-    game.tags.some(tag => tag.toLowerCase().includes(query))
+  .catch(err =>
+    console.error(
+      "❌ JSON Error:",
+      err
+    )
   );
+
+
+// SEARCH FUNCTION
+function searchGames(query) {
+  
+  query =
+    query.trim().toLowerCase();
+  
+  if (!query) return [];
+  
+  return allGames.filter(game => {
+    
+    const title =
+      (game.title || "")
+      .toLowerCase();
+    
+    const tags =
+      Array.isArray(game.tags) ?
+      game.tags.join(" ")
+      .toLowerCase() :
+      "";
+    
+    return (
+      title.includes(query) ||
+      tags.includes(query)
+    );
+    
+  });
+  
 }
 
-// Example: call this when user types
-document.querySelector(".search-input").addEventListener("input", e => {
-  const results = searchGames(e.target.value);
-  console.log("Search results:", results); // test output
 
-  const container = document.getElementById("searchResults");
-  container.innerHTML = results.length ?
-    results.map(game => `
-        <div onclick="playGame(${game.id})">
-          <img src="${game.img}" width="50">
-          <span>${game.title}</span>
-        </div>
-      `).join("") :
-    "<p style='color:white'>No games found</p>";
-});
+// INPUT EVENT
+document.querySelector(
+  ".search-input"
+).addEventListener(
+  "input",
+  e => {
+    
+    const results =
+      searchGames(e.target.value);
+    
+    console.log(
+      "🔍 Results:",
+      results
+    );
+    
+    const container =
+      document.getElementById(
+        "search-result-card"
+      );
+    
+    if (!container) return;
+    
+    // EMPTY
+    if (
+      e.target.value.trim() === ""
+    ) {
+      
+      container.innerHTML = "";
+      return;
+      
+    }
+    
+    // RESULTS
+    container.innerHTML =
+      results.length ?
+      
+      `
+      <div class="search-results-wrapper">
 
-// Play Game + Recently Played
+        ${results.map(game => `
+
+          <div class="search-result-card"
+               data-id="${game.id}">
+
+            <img src="${game.img}"
+                 alt="${game.title}">
+
+            <div class="search-game-info">
+              <h3>${game.title}</h3>
+                  <div class="search-developer">
+      ${game.developer || "Playonic"}
+    </div>
+            </div>
+
+          </div>
+
+        `).join("")}
+
+      </div>
+      `
+      
+      :
+      
+      "<p style='color:white'>No games found</p>";
+    
+    
+    
+    // CLICK EVENT
+    document.querySelectorAll(
+      ".search-result-card"
+    ).forEach(card => {
+      
+      card.addEventListener(
+        "click",
+        () => {
+          
+          const id =
+            card.dataset.id;
+          
+          console.log(
+            "🎮 CLICKED ID:",
+            id
+          );
+          
+          playGame(id);
+          
+        }
+      );
+      
+    });
+    
+  }
+);
+
+
+// PLAY GAME
 function playGame(id) {
-  const game = allGames.find(g => g.id === id);
-  if (!game) return;
-
-  let recent = JSON.parse(localStorage.getItem("recentlyPlayed") || "[]");
-  recent = recent.filter(g => g.id !== game.id);
-  recent.unshift(game);
-  if (recent.length > 6) recent.pop();
-  localStorage.setItem("recentlyPlayed", JSON.stringify(recent));
-
-  window.location.href = game.link;
+  
+  const game =
+    allGames.find(g =>
+      String(g.id) ===
+      String(id)
+    );
+  
+  console.log(
+    "🚀 OPEN GAME:",
+    game
+  );
+  
+  if (!game) {
+    
+    console.error(
+      "❌ GAME NOT FOUND"
+    );
+    
+    return;
+    
+  }
+  
+  // SAVE
+  localStorage.setItem(
+    "selectedGameId",
+    game.id
+  );
+  
+  // OPEN
+  window.location.href =
+    `view-page.html?id=${game.id}`;
+  
 }
-
 
 
 
