@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMPOSTOR - Party Game</title>
+
+<style>
+:root {
+ --bg:#101429;
+ --panel:#1b2342;
+ --panel2:#141d37;
+ --border:#3a476d;
+ --text:#f6f7ff;
+ --muted:#aab5d3;
+ --purple:#9275ff;
+ --pink:#ff729b;
+ --green:#79e3b0;
+ --gold:#ffdc83;
+}
+
+* { box-sizing:border-box; }
+
+body {
+ margin:0;
+ min-height:100vh;
+ font-family:Arial,sans-serif;
+ color:var(--text);
+ background:
+ radial-gradient(circle at top left,#40336e 0,transparent 35%),
+ linear-gradient(145deg,#101429,#17213d);
+}
+
+button,input,select { font:inherit; }
+button { cursor:pointer; }
+
+.app {
+ width:min(900px,94%);
+ margin:auto;
+ padding:20px 0 40px;
+}
+
+header {
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-bottom:20px;
+}
+
+.logo {
+ font-size:23px;
+ font-weight:1000;
+ letter-spacing:2px;
+}
+
+.logo span { color:var(--purple); }
+
+.offline {
+ border:1px solid var(--border);
+ border-radius:30px;
+ padding:7px 12px;
+ font-size:11px;
+ color:var(--green);
+}
+
+.screen {
+ display:none;
+ background:var(--panel);
+ border:1px solid var(--border);
+ border-radius:22px;
+ padding:25px;
+ box-shadow:0 20px 55px #0005;
+}
+
+.screen.active { display:block; }
+
+.hero {
+ text-align:center;
+ padding:15px 0 25px;
+}
+
+.hero .emoji { font-size:65px; }
+
+.hero h1 {
+ font-size:clamp(35px,7vw,58px);
+ line-height:1;
+ margin:12px 0;
+}
+
+.hero h1 span { color:var(--purple); }
+
+p { color:var(--muted); line-height:1.6; }
+h2 { margin-top:0; }
+
+.section-title {
+ margin:25px 0 12px;
+ font-size:17px;
+}
+
+.grid {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
+}
+
+.field label {
+ display:block;
+ margin-bottom:7px;
+ color:#d0d8ef;
+ font-size:13px;
+ font-weight:bold;
+}
+
+.field input,
+.field select {
+ width:100%;
+ padding:13px;
+ border:1px solid var(--border);
+ border-radius:11px;
+ background:#111a33;
+ color:white;
+}
+
+.players {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:9px;
+}
+
+.player-input {
+ display:flex;
+ align-items:center;
+ gap:8px;
+ padding:9px;
+ background:var(--panel2);
+ border:1px solid var(--border);
+ border-radius:11px;
+}
+
+.player-input span {
+ color:#a99aff;
+ font-weight:bold;
+}
+
+.player-input input {
+ width:100%;
+ min-width:0;
+ background:transparent;
+ color:white;
+ border:0;
+ outline:0;
+ padding:5px;
+}
+
+.setting {
+ padding:14px;
+ background:var(--panel2);
+ border:1px solid var(--border);
+ border-radius:12px;
+ margin-top:12px;
+}
+
+.setting label {
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:10px;
+ font-size:13px;
+}
+
+.setting input { accent-color:var(--purple); }
+
+.category-toggle {
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:12px;
+ width:100%;
+ padding:15px;
+ border:1px solid var(--border);
+ border-radius:12px;
+ background:var(--panel2);
+ color:white;
+ font-weight:bold;
+ text-align:left;
+}
+
+.category-toggle:hover { border-color:var(--purple); }
+
+.category-toggle .arrow {
+ color:var(--purple);
+ font-size:18px;
+}
+
+.category-area {
+ display:none;
+ margin-top:12px;
+ padding:13px;
+ border:1px solid var(--border);
+ border-radius:12px;
+ background:#111a33;
+}
+
+.category-area.open { display:block; }
+
+.category-tools {
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px;
+ margin-bottom:12px;
+}
+
+.category-tools button {
+ padding:8px 12px;
+ color:white;
+ background:#303c60;
+ border:1px solid #59658d;
+ border-radius:8px;
+ font-size:12px;
+}
+
+.categories {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:9px;
+}
+
+.category {
+ display:flex;
+ align-items:center;
+ gap:8px;
+ padding:11px;
+ background:var(--panel2);
+ border:1px solid var(--border);
+ border-radius:10px;
+ font-size:12px;
+}
+
+.category input { accent-color:var(--purple); }
+
+.category-count {
+ margin:0 0 12px;
+ font-size:12px;
+ color:var(--green);
+}
+
+.btn {
+ border:0;
+ border-radius:12px;
+ padding:14px 18px;
+ color:white;
+ font-weight:900;
+ background:linear-gradient(135deg,#a28aff,#6e62e9);
+}
+
+.btn:hover { filter:brightness(1.12); }
+
+.btn.secondary {
+ background:#303c60;
+ border:1px solid #59658d;
+}
+
+.btn.pink {
+ background:linear-gradient(135deg,#ff86a9,#df5188);
+}
+
+.btn.full { width:100%; }
+
+.actions {
+ display:flex;
+ gap:10px;
+ margin-top:20px;
+}
+
+.actions button { flex:1; }
+
+.error {
+ color:#ff8eac;
+ margin-top:10px;
+ font-size:13px;
+}
+
+.center { text-align:center; }
+
+.big-icon { font-size:65px; margin:15px 0; }
+
+.reveal-card {
+ margin:22px auto;
+ padding:30px 15px;
+ max-width:500px;
+ background:linear-gradient(145deg,#303c69,#18213e);
+ border:1px solid #6574a8;
+ border-radius:20px;
+}
+
+.role {
+ font-size:12px;
+ font-weight:1000;
+ letter-spacing:2px;
+ color:#b5a3ff;
+}
+
+.word {
+ font-size:clamp(28px,7vw,45px);
+ font-weight:1000;
+ color:var(--gold);
+ margin:15px 0;
+ overflow-wrap:anywhere;
+}
+
+.progress {
+ height:7px;
+ background:#35405f;
+ border-radius:20px;
+ overflow:hidden;
+ margin:12px 0;
+}
+
+.progress div {
+ height:100%;
+ background:var(--purple);
+ transition:width .2s;
+}
+
+.laps {
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:10px;
+ margin:20px 0;
+}
+
+.lap {
+ padding:15px 5px;
+ border:1px solid var(--border);
+ background:var(--panel2);
+ color:white;
+ border-radius:12px;
+}
+
+.lap.active {
+ background:#393267;
+ border-color:var(--purple);
+}
+
+.vote-grid {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:10px;
+ margin:20px 0;
+}
+
+.vote-option {
+ display:flex;
+ align-items:center;
+ gap:10px;
+ text-align:left;
+ padding:13px;
+ background:var(--panel2);
+ color:white;
+ border:1px solid var(--border);
+ border-radius:12px;
+}
+
+.vote-option.selected {
+ border:2px solid var(--purple);
+ background:#34305e;
+}
+
+.avatar {
+ width:32px;
+ height:32px;
+ flex-shrink:0;
+ display:grid;
+ place-items:center;
+ border-radius:10px;
+ background:#6358b4;
+ font-weight:bold;
+}
+
+.result {
+ padding:25px 15px;
+ margin:20px 0;
+ text-align:center;
+ border:1px solid var(--border);
+ border-radius:17px;
+ background:#253153;
+}
+
+.result h1 { font-size:35px; }
+
+.result-word {
+ color:var(--gold);
+ font-size:28px;
+ font-weight:1000;
+ margin:12px;
+}
+
+.result-row {
+ display:flex;
+ justify-content:space-between;
+ padding:13px;
+ background:var(--panel2);
+ border-bottom:1px solid var(--border);
+}
+
+.result-row:last-child { border:0; }
+
+.score-grid {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:10px;
+}
+
+.score {
+ padding:15px;
+ background:var(--panel2);
+ border:1px solid var(--border);
+ border-radius:12px;
+}
+
+.score strong {
+ display:block;
+ font-size:26px;
+ margin-top:5px;
+}
+
+.small {
+ font-size:12px;
+ color:var(--muted);
+}
+
+footer {
+ text-align:center;
+ color:#7783a5;
+ font-size:11px;
+ padding:20px;
+}
+
+@media(max-width:600px) {
+ .screen { padding:17px; }
+ .grid,.players,.categories,.vote-grid {
+  grid-template-columns:1fr;
+ }
+ .actions { flex-direction:column; }
+ .logo { font-size:19px; }
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<header>
+ <div class="logo">🎭 IMPOSTOR<span>.</span></div>
+ <div class="offline">● OFFLINE GAME</div>
+</header>
+
+<!-- SETUP -->
+<section id="setup" class="screen active">
+
+ <div class="hero">
+  <div class="emoji">🎭</div>
+  <h1>WHO IS THE <span>IMPOSTOR?</span></h1>
+  <p>One secret word. One hidden impostor. Can your group find them?</p>
+ </div>
+
+ <h2 class="section-title">Game Setup</h2>
+
+ <div class="grid">
+  <div class="field">
+   <label>Number of players</label>
+   <select id="playerCount"></select>
+  </div>
+
+  <div class="field">
+   <label>Maximum impostors</label>
+   <select id="impostorCount">
+    <option value="1">1 impostor</option>
+    <option value="2" selected>Up to 2 impostors</option>
+   </select>
+  </div>
+ </div>
+
+ <h3 class="section-title">Player Names</h3>
+ <div id="players" class="players"></div>
+
+ <h3 class="section-title">Impostor Settings</h3>
+
+ <div class="setting">
+  <label>
+   Show category to impostor
+   <input type="checkbox" id="showCategory">
+  </label>
+  <p class="small">If enabled, the impostor can see the category but not the secret word.</p>
+ </div>
+
+ <h3 class="section-title">Word Categories</h3>
+
+ <button type="button" class="category-toggle" id="categoryToggle" onclick="toggleCategories()">
+  <span>📚 SHOW CATEGORIES</span>
+  <span class="arrow" id="categoryArrow">＋</span>
+ </button>
+
+ <div id="categoryArea" class="category-area">
+  <p id="categoryCount" class="category-count">0 categories selected</p>
+  <div class="category-tools">
+   <button type="button" onclick="selectAllCategories()">SELECT ALL</button>
+   <button type="button" onclick="deselectAllCategories()">DESELECT ALL</button>
+  </div>
+  <div id="categories" class="categories"></div>
+ </div>
+
+ <div id="error" class="error"></div>
+
+ <div class="actions">
+  <button class="btn full" onclick="startGame()">START GAME →</button>
+ </div>
+
+ <p class="small center">⚙️ Your game settings are automatically saved on this device.</p>
+</section>
+
+<!-- ROLE REVEAL -->
+<section id="reveal" class="screen center">
+
+ <p class="small">PRIVATE ROLE REVEAL</p>
+ <h2 id="revealTitle">Player 1</h2>
+ <p>Pass the phone to this player. Everyone else, look away.</p>
+
+ <div class="reveal-card">
+  <div class="big-icon" id="revealIcon">🔒</div>
+  <div class="role" id="role">TAP TO REVEAL</div>
+  <div class="word" id="secretWord">••••••••</div>
+  <p id="revealCategory"></p>
+  <p id="revealHint" class="small">Only the current player should look.</p>
+ </div>
+
+ <p id="revealProgress" class="small"></p>
+ <div class="progress"><div id="progressBar"></div></div>
+
+ <div class="actions">
+  <button id="revealButton" class="btn full" onclick="revealRole()">TAP TO REVEAL</button>
+  <button id="passButton" class="btn secondary full" onclick="passPhone()" style="display:none">HIDE & PASS PHONE →</button>
+ </div>
+</section>
+
+<!-- DISCUSSION -->
+<section id="discussion" class="screen center">
+
+ <div class="big-icon">🗣️</div>
+ <h1>DISCUSSION</h1>
+ <p>Each player says a clue related to the secret word. Do not reveal the actual word.</p>
+
+ <h3 class="section-title">Choose discussion rounds</h3>
+
+ <div class="laps">
+  <button class="lap" onclick="selectLaps(1,this)">1 Round</button>
+  <button class="lap active" onclick="selectLaps(2,this)">2 Rounds</button>
+  <button class="lap" onclick="selectLaps(3,this)">3 Rounds</button>
+ </div>
+
+ <div class="setting">
+  <strong>How to play</strong>
+  <p class="small">Go clockwise. Give a smart clue without saying the secret word. The impostor must try to blend in.</p>
+ </div>
+
+ <div class="actions">
+  <button class="btn full" onclick="startVoting()">GO TO VOTING →</button>
+ </div>
+</section>
+
+<!-- VOTING -->
+<section id="voting" class="screen center">
+
+ <p class="small">PRIVATE VOTING</p>
+ <h1>WHO IS THE IMPOSTOR?</h1>
+ <h2 id="voterTitle">Player 1</h2>
+ <p id="voterText">Select the person you suspect.</p>
+
+ <div id="voteOptions" class="vote-grid"></div>
+
+ <div class="actions">
+  <button id="voteButton" class="btn full" onclick="submitVote()" disabled>CONFIRM VOTE</button>
+ </div>
+ <p class="small">All players are displayed in the voting list. Your vote will be hidden from the next player.</p>
+</section>
+
+<!-- RESULTS -->
+<section id="result" class="screen">
+
+ <p class="small">ROUND RESULTS</p>
+ <h1 id="resultHeading">RESULT</h1>
+
+ <div class="result">
+  <div class="big-icon" id="resultIcon">🎉</div>
+  <h1 id="winner">CREW WINS!</h1>
+  <p id="resultMessage"></p>
+  <div class="result-word" id="resultWord"></div>
+  <p id="resultCategory"></p>
+  <p id="impostorNames"></p>
+ </div>
+
+ <h2>Voting Results</h2>
+ <div id="voteResults"></div>
+
+ <h2 class="section-title">Party Score</h2>
+ <div class="score-grid">
+  <div class="score">
+   <span class="small">CREW WINS</span>
+   <strong id="crewScore">0</strong>
+  </div>
+  <div class="score">
+   <span class="small">IMPOSTOR WINS</span>
+   <strong id="impostorScore">0</strong>
+  </div>
+ </div>
+
+ <div class="actions">
+  <button class="btn" onclick="newRound()">NEXT ROUND →</button>
+  <button class="btn secondary" onclick="newParty()">NEW PARTY</button>
+ </div>
+</section>
+
+<footer>IMPOSTOR OFFLINE PARTY GAME • No internet required</footer>
+
+</div>
+
+<script>
+/* WORD DATABASE */
+const WORDS = {
+ "Animals & Nature": [
+  "Elephant","Tiger","Lion","Dolphin","Penguin","Butterfly",
+  "Giraffe","Monkey","Shark","Eagle","Rabbit","Turtle"
+ ],
+ "Books": [
+  "Harry Potter","The Hobbit","Dracula","Animal Farm",
+  "Alice in Wonderland","The Alchemist","Sherlock Holmes",
+  "Moby Dick","Peter Pan","The Great Gatsby"
+ ],
+ "Countries & Cities": [
+  "India","Japan","London","Paris","Dubai","Tokyo",
+  "Australia","Brazil","Canada","Rome","Singapore","Berlin"
+ ],
+ "Famous People": [
+  "Albert Einstein","Cristiano Ronaldo","Lionel Messi",
+  "Taylor Swift","Michael Jackson","Steve Jobs",
+  "Elon Musk","Nelson Mandela","Adele","Usain Bolt"
+ ],
+ "Games & Leisure": [
+  "Chess","Monopoly","Minecraft","Poker","Bingo",
+  "Bowling","Jenga","Tetris","Camping","Cycling"
+ ],
+ "Household": [
+  "Chair","Refrigerator","Mirror","Toothbrush","Sofa",
+  "Microwave","Pillow","Clock","Vacuum Cleaner","Bathtub"
+ ],
+ "Movies & TV": [
+  "Avatar","Titanic","Batman","The Matrix","Frozen",
+  "Jurassic Park","Friends","Breaking Bad","Shrek","Inception"
+ ],
+ "Music": [
+  "Guitar","Piano","Drums","Microphone","Violin",
+  "Jazz","Rock Music","Queen","ABBA","Coldplay"
+ ],
+ "Professions": [
+  "Doctor","Engineer","Teacher","Pilot","Chef",
+  "Mechanic","Police Officer","Architect","Farmer","Scientist"
+ ],
+ "Sports": [
+  "Cricket","Football","Basketball","Tennis","Boxing",
+  "Swimming","Golf","Rugby","Volleyball","Formula One"
+ ],
+ "Technology": [
+  "Smartphone","Laptop","Bluetooth","Drone","Robot",
+  "Keyboard","Internet","Camera","Printer","Virtual Reality"
+ ],
+ "Vehicles Around the World": [
+  "Motorcycle","Airplane","Train","Tractor","Helicopter",
+  "Scooter","Ambulance","Yacht","Bus","Pickup Truck"
+ ],
+ "School & Education": [
+  "Classroom","Blackboard","Homework","Examination","Library",
+  "School Bus","Notebook","Pencil","Principal","Science Lab"
+ ],
+ "Superheroes": [
+  "Superman","Batman","Spider-Man","Iron Man","Hulk",
+  "Wonder Woman","Thor","Flash","Captain America","Black Panther"
+ ],
+ "Food & Drinks": [
+  "Pizza","Burger","Ice Cream","Chocolate","Sandwich",
+  "Coffee","Tea","Pasta","Pancake","Milkshake"
+ ],
+ "Internet Culture": [
+  "Meme","Viral Video","Hashtag","Influencer","Emoji",
+  "Selfie","Podcast","Livestream","Comment Section","Viral Challenge"
+ ],
+ "Farming & Agriculture": [
+  "Tractor","Farmer","Wheat","Rice Field","Plough",
+  "Harvest","Cow","Irrigation","Sugarcane","Farmhouse"
+ ],
+ "Video Games":  [
+    "GTA 5",
+    "GTA III",
+    "GTA Vice City",
+    "GTA San Andreas",
+    "GTA IV",
+    "GTA Online",
+    "GTA 6", 
+    "Sleeping Dogs",
+    "Red Dead Redemption 2",
+    "Minecraft",
+    "Subway Surfers",
+    "Temple Run",
+    "Temple Run 2",
+    "Free Fire",
+    "PUBG Mobile",
+    "BGMI",
+    "Clash of Clans",
+    "Clash Royale",
+    "Hill Climb Racing",
+    "Hill Climb Racing 2",
+    "Traffic Racer",
+    "Traffic Rider",
+    "Shadow Fight",
+    "Dr. Driving",
+    "Angry Birds",
+    "Talking Tom",
+    "My Talking Tom Friends",
+    "Candy Crush Saga",
+    "Ludo King",
+    "8 Ball Pool",
+    "Mini Militia",
+    "Asphalt 8",
+    "Asphalt Nitro",
+    "Plants vs. Zombies",
+    "Fruit Ninja",
+    "Geometry Dash",
+    "Stickman Games",
+    "Cut the Rope",
+    "Doodle Jump",
+    "Jetpack Joyride",
+    "Drag Racing",
+    "Beach Buggy Racing",
+    "Extreme Car Driving Simulator",
+    "Drift Max",
+    "Racing Moto",
+    "Bike Racing 3D",
+    "Trial Xtreme",
+    "Gangstar Vegas",
+    "N.O.V.A. 3",
+    "Dead Trigger 2",
+    "Ninja Hattori",
+    "Vector",
+    "Dan the Man",
+    "Modern Combat 5",
+    "Real Cricket",
+    "BombSquad",
+    "World Cricket Championship 2",
+    "Dream League Soccer",
+    "Anger of Stick 5",
+    "Robbery Bob",
+    "Robbery Bob 2: Double Trouble",
+    "Badminton League",
+    "Mini Football",
+   "World Cricket Championship Lite",
+    "Stick Cricket",
+    "Cricket League",
+    "FIFA Mobile",
+    "Zombie Tsunami",
+    "Six-Guns",
+    "Brother in Arms 3",
+    "Smash Bandits Racing",
+    "MMX Hill Climb",
+    "Mad Skills Motocross 2",
+    "Death Moto",
+    "Flappy Bird",
+    "GT Racing 2",
+    "Iron Man 3",
+    "The Amazing Spider-Man 2",
+    "Sonic Dash",
+    "Zombie Highway 2",
+    "Sonic Jump",
+    "Crazy Taxi",
+    "Road Rash (Classic PC)",
+    "Stupid Zombies",
+    "Dead Island",
+    "State of Decay",
+    "Resident Evil 4",
+    "Dead Rising 2",
+    "Call of Duty",
+    "Hitman",
+    "Euro Truck Simulator 2",
+    "Forza Horizon 4",
+    "Rope Hero",
+    "Superman Simulator",
+    "Hunter Assassin",
+    "Level Devil",
+    "Boss Stickman",
+    "Indian Train Simulator",
+    "Supermarket Simulator"
+ ],
+ "Anime": [
+  "Naruto","Goku","One Piece","Demon Slayer","Pikachu",
+  "Luffy","Dragon Ball","Death Note","Doraemon","Attack on Titan"
+ ],
+ "Space & Science": [
+  "Sun","Moon","Mars","Jupiter","Black Hole",
+  "Astronaut","Rocket","Galaxy","Telescope","Solar System"
+ ],
+ "Emotions": [
+  "Happiness","Anger","Fear","Surprise","Sadness",
+  "Excitement","Jealousy","Love","Confusion","Nervousness"
+ ],
+ "Places Around the World": [
+  "Eiffel Tower","Taj Mahal","Great Wall of China","Colosseum",
+  "Statue of Liberty","Mount Everest","Pyramids","Burj Khalifa",
+  "Niagara Falls","Sydney Opera House"
+ ],
+ "Indian Culture": [
+  "Diwali","Holi","Garba","Bharatanatyam","Yoga",
+  "Saree","Namaste","Rangoli","Kumbh Mela","Mehendi"
+ ],
+ "Indian Food": [
+  "Biryani","Samosa","Dosa","Idli","Pav Bhaji",
+  "Vada Pav","Butter Chicken","Pani Puri","Gulab Jamun","Poha"
+ ],
+ "Animals & Pets": [
+  "Dog","Cat","Parrot","Hamster","Goldfish",
+  "Rabbit","Horse","Puppy","Kitten","Turtle"
+ ],
+ "Travel & Transport": [
+  "Airport","Passport","Train Station","Cruise Ship","Backpack",
+  "Road Trip","Hotel","Metro","Tour Guide","Camping Tent"
+ ],
+ "Weather & Seasons": [
+  "Rain","Thunderstorm","Snow","Rainbow","Summer",
+  "Winter","Monsoon","Fog","Cyclone","Hailstorm"
+ ],
+ "Mythology & Legends": [
+  "Lord Rama","Lord Krishna","Hanuman","Zeus","Thor",
+  "Medusa","Hercules","Ravana","Ganesha","Phoenix"
+ ],
+ "Indian Cartoons": [
+  "Abhimanyu",
+  "Adventure Time",
+  "Akul Nakul: The Asuras",
+  "Angry Birds",
+  "Appu – The Yogic Elephant",
+  "Art Attack",
+  "Avatar: The Last Airbender",
+  "Bal Bahubali",
+  "Bandbudh Aur Budbak",
+  "Ben 10",
+  "Beyblade",
+  "Big City Greens",
+  "Bluey",
+  "Blaze and the Monster Machines",
+  "Bubble Guppies",
+  "Chacha Bhatija",
+  "Chhota Bheem",
+  "Chhoti Anandi",
+  "Chimpui",
+  "Chikoo Aur Bunty",
+  "Courage the Cowardly Dog",
+  "Crayon Shin-chan",
+  "Dora the Explorer",
+  "Doraemon",
+  "Dragon Ball Z",
+  "Dragon Ball Super",
+  "DuckTales",
+  "Dexter's Laboratory",
+  "Dennis & Gnasher: Unleashed!",
+  "Doc McStuffins",
+  "Ed, Edd n Eddy",
+  "Ekans – Ek Se Badhkar Snake",
+  "Ekans – Snakes Awake!",
+  "Fab 5 Mission Tango",
+  "Flame of Recca",
+  "Fukrey Boyzzz",
+  "Gravity Falls",
+  "Grizzy and the Lemmings",
+  "Guru Aur Bhole",
+  "Gattu Battu", 
+  "Hagemaru",
+  "Harry & Bunnie",
+  "He-Man and the Masters of the Universe",
+  "Honey Bunny Ka Jholmaal",
+  "Inazuma Eleven",
+  "Jackie Chan Adventures",
+  "Johnny Bravo",
+  "Jungle Book",
+  "Kalari Kids",
+  "Kanha – Morpankh Samrat",
+  "Kick Buttowski: Suburban Subardev",
+  "Kicko & Super Speedo",
+  "Kim Possible",
+  "Kiteretsu Daihyakka",
+  "Kochikame",
+  "Kung Fu Dino Posse",
+  "Kung Fu Panda: Legends of Awesomeness",
+  "Lambu-G Tingu-G",
+  "Lamput",
+  "Leo & Tig",
+  "Little Singham",
+  "Luv Kushh",
+  "Masha and the Bear",
+  "Marcus Level",
+  "Mighty Raju",
+  "Miraculous: Tales of Ladybug & Cat Noir",
+  "Mister Maker",
+  "Motu Patlu",
+  "Mr. Bean: The Animated Series",
+  "Naruto",
+  "Naruto Shippuden",
+  "Ninja Hattori",
+  "Noddy",
+  "Octonauts",
+  "Oggy and the Cockroaches",
+  "Oswald",
+  "Paap-O-Meter",
+  "PAW Patrol",
+  "Pakdam Pakdai",
+  "Pandavas",
+  "Peppa Pig",
+  "Perman",
+  "Phineas and Ferb",
+  "The Bhoot Bandhus",
+  "PJ Masks",
+  "Pokémon",
+  "Power Rangers",
+  "Prince Jai Aur Dumdar Viru",
+  "Recess",
+  "Red Ball",
+  "Rudra: Boom Chik Chik Boom",
+  "Roll No 21",
+  "Robin Hood: Mischief in Sherwood",
+  "Sarah & Duck",
+  "Selfie With Bajrangi",
+  "Sheikh Chilli and Friendz",
+  "Shiva",
+  "Slugterra",
+  "Smashing Simmba",
+  "Sofia the First",
+  "Sonic Boom",
+  "Sonic Dash",
+  "Sonic X",
+  "SpongeBob SquarePants",
+  "Star vs. the Forces of Evil",
+  "Stuart Little",
+  "Super Bheem",
+  "Superman Simulator",
+  "Supa Strikas",
+  "Taarak Mehta Kka Chhota Chashmah",
+  "Teen Titans Go!",
+  "Teletubbies",
+  "The Amazing Spider-Man 2",
+  "The Fairly OddParents",
+  "The Loud House",
+  "The Owl House",
+  "The Penguins of Madagascar",
+  "The Powerpuff Girls",
+  "The Smurfs",
+  "The Jungle Book",
+  "Thomas & Friends",
+  "Titoo – Har Jawaab Ka Sawaal Hu",
+  "TinTin: The Adventures of Tintin",
+  "Tom and Jerry",
+  "Transformers: Rescue Bots",
+  "Tsurupika Hagemaru",
+  "Ultimate Spider-Man",
+  "Ultra B",
+  "Vir: The Robot Boy",
+  "We Baby Bears",
+  "We Bare Bears",
+  "Wild Kratts",
+  "Zig & Sharko", 
+
+ ],
+ "Indian Festivals": [
+  "Diwali","Holi","Eid","Navratri","Ganesh Chaturthi",
+  "Onam","Pongal","Baisakhi","Raksha Bandhan","Makar Sankranti"
+ ],
+ "Indian Monuments": [
+  "Taj Mahal","Gateway of India","Red Fort","India Gate",
+  "Qutub Minar","Hawa Mahal","Charminar","Ajanta Caves",
+  "Konark Sun Temple","Victoria Memorial"
+ ],
+ "Indian States & Cities": [
+  "Mumbai","Delhi","Pune","Jaipur","Kolkata",
+  "Chennai","Bengaluru","Hyderabad","Goa","Ahmedabad"
+ ],
+ "Nature & Environment": [
+  "Forest","Waterfall","Mountain","River","Desert",
+  "Ocean","Volcano","Island","Cave","Glacier"
+ ]
+};
+
+/* GAME STATE */
+const game = {
+ players:[],
+ impostors:[],
+ word:"",
+ category:"",
+ roles:{},
+ revealIndex:0,
+ revealed:false,
+ voterIndex:0,
+ selectedVote:null,
+ votes:{},
+ laps:2,
+ crewScore:0,
+ impostorScore:0
+};
+
+const STORAGE_KEY = "impostorGameSettingsV2";
+
+const $ = id => document.getElementById(id);
+
+function showScreen(id) {
+ document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+ $(id).classList.add("active");
+ window.scrollTo(0,0);
+}
+
+function shuffle(array) {
+ const a=[...array];
+ for(let i=a.length-1;i>0;i--) {
+  const j=Math.floor(Math.random()*(i+1));
+  [a[i],a[j]]=[a[j],a[i]];
+ }
+ return a;
+}
+
+function escapeHTML(text) {
+ return String(text).replace(/[&<>"']/g,c => ({
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&#39;"
+ }[c]));
+}
+
+/* AUTO SAVE SETTINGS */
+function saveSettings() {
+ const names=[...document.querySelectorAll(".playerName")].map(x=>x.value);
+
+ const selectedCategories=[
+  ...document.querySelectorAll(".categoryCheck:checked")
+ ].map(x=>x.value);
+
+ const settings={
+  playerCount:$("playerCount").value,
+  impostorCount:$("impostorCount").value,
+  showCategory:$("showCategory").checked,
+  names,
+  selectedCategories
+ };
+
+ try {
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(settings));
+ } catch(error) {
+  console.warn("Could not save settings:",error);
+ }
+}
+
+function loadSettings() {
+ try {
+  const saved=localStorage.getItem(STORAGE_KEY);
+  return saved ? JSON.parse(saved) : null;
+ } catch(error) {
+  return null;
+ }
+}
+
+/* PLAYER INPUTS */
+$("playerCount").innerHTML=
+ Array.from({length:8},(_,i)=>
+  `<option value="${i+3}" ${i===3?"selected":""}>${i+3} Players</option>`
+ ).join("");
+
+function buildPlayers(savedNames=null) {
+ const count=+$("playerCount").value;
+
+ const old=savedNames || [
+  ...document.querySelectorAll(".playerName")
+ ].map(x=>x.value);
+
+ $("players").innerHTML="";
+
+ for(let i=0;i<count;i++) {
+  const label=document.createElement("label");
+  label.className="player-input";
+
+  const number=document.createElement("span");
+  number.textContent=String(i+1).padStart(2,"0");
+
+  const input=document.createElement("input");
+  input.className="playerName";
+  input.maxLength=18;
+  input.placeholder="Player "+(i+1);
+  input.value=old[i]||"";
+
+  input.addEventListener("input",saveSettings);
+
+  label.append(number,input);
+  $("players").appendChild(label);
+ }
+}
+
+$("playerCount").addEventListener("change",()=>{
+ buildPlayers();
+ saveSettings();
+});
+
+$("impostorCount").addEventListener("change",saveSettings);
+$("showCategory").addEventListener("change",saveSettings);
+
+/* CATEGORY INPUTS */
+function buildCategories(savedCategories=null) {
+ $("categories").innerHTML="";
+
+ const selected=savedCategories
+  ? new Set(savedCategories)
+  : new Set(Object.keys(WORDS));
+
+ Object.keys(WORDS).forEach(category=>{
+  const label=document.createElement("label");
+  label.className="category";
+
+  const checkbox=document.createElement("input");
+  checkbox.type="checkbox";
+  checkbox.className="categoryCheck";
+  checkbox.value=category;
+  checkbox.checked=selected.has(category);
+
+  checkbox.addEventListener("change",()=>{
+   updateCategoryCount();
+   saveSettings();
+  });
+
+  const name=document.createElement("span");
+  name.textContent=category;
+
+  label.append(checkbox,name);
+  $("categories").appendChild(label);
+ });
+
+ updateCategoryCount();
+}
+
+function updateCategoryCount() {
+ const total=Object.keys(WORDS).length;
+ const selected=document.querySelectorAll(".categoryCheck:checked").length;
+
+ $("categoryCount").textContent=
+  selected+" of "+total+" categories selected";
+}
+
+function toggleCategories() {
+ const area=$("categoryArea");
+ const open=area.classList.toggle("open");
+
+ $("categoryToggle").querySelector("span").textContent=
+  open?"📚 HIDE CATEGORIES":"📚 SHOW CATEGORIES";
+
+ $("categoryArrow").textContent=open?"−":"＋";
+}
+
+function selectAllCategories() {
+ document.querySelectorAll(".categoryCheck").forEach(x=>x.checked=true);
+ updateCategoryCount();
+ saveSettings();
+}
+
+function deselectAllCategories() {
+ document.querySelectorAll(".categoryCheck").forEach(x=>x.checked=false);
+ updateCategoryCount();
+ saveSettings();
+}
+
+/* START GAME */
+function startGame() {
+ const names=[...document.querySelectorAll(".playerName")]
+  .map((x,i)=>x.value.trim()||"Player "+(i+1));
+
+ const maxImpostors=+$("impostorCount").value;
+
+ const selected=[
+  ...document.querySelectorAll(".categoryCheck:checked")
+ ].map(x=>x.value);
+
+ $("error").textContent="";
+
+ if(names.length<3) {
+  $("error").textContent="Minimum 3 players required.";
+  return;
+ }
+
+ if(maxImpostors>=names.length) {
+  $("error").textContent="There must be at least one crew member.";
+  return;
+ }
+
+ if(new Set(names.map(x=>x.toLowerCase())).size!==names.length) {
+  $("error").textContent="Please use unique player names.";
+  return;
+ }
+
+ if(selected.length===0) {
+  $("error").textContent="Select at least one category.";
+  $("categoryArea").classList.add("open");
+  return;
+ }
+
+ game.players=names.map((name,id)=>({id,name}));
+ game.crewScore=0;
+ game.impostorScore=0;
+
+ saveSettings();
+ newRound();
+}
+
+/* NEW ROUND */
+function newRound() {
+ const selected=[
+  ...document.querySelectorAll(".categoryCheck:checked")
+ ].map(x=>x.value);
+
+ if(!selected.length) {
+  showScreen("setup");
+  $("error").textContent="Select at least one category.";
+  return;
+ }
+
+ game.category=selected[Math.floor(Math.random()*selected.length)];
+
+ const list=WORDS[game.category];
+ game.word=list[Math.floor(Math.random()*list.length)];
+
+ const max=Math.min(+$("impostorCount").value,game.players.length-1);
+ const impostorNumber=1+Math.floor(Math.random()*max);
+
+ game.impostors=shuffle(game.players.map(p=>p.id))
+  .slice(0,impostorNumber);
+
+ game.roles={};
+
+ game.players.forEach(p=>{
+  game.roles[p.id]=game.impostors.includes(p.id)?"impostor":"crew";
+ });
+
+ game.revealIndex=0;
+ game.votes={};
+ game.voterIndex=0;
+
+ renderReveal();
+ showScreen("reveal");
+}
+
+/* ROLE REVEAL */
+function renderReveal() {
+ const player=game.players[game.revealIndex];
+
+ $("revealTitle").textContent=player.name+"'s Turn";
+ $("revealIcon").textContent="🔒";
+ $("role").textContent="TAP TO REVEAL";
+ $("role").style.color="#b5a3ff";
+ $("secretWord").textContent="••••••••";
+ $("revealCategory").textContent="";
+ $("revealHint").textContent="Only this player should look at the screen.";
+
+ $("revealButton").style.display="block";
+ $("passButton").style.display="none";
+
+ $("revealProgress").textContent=
+  "PLAYER "+(game.revealIndex+1)+" OF "+game.players.length;
+
+ $("progressBar").style.width=
+  (game.revealIndex/game.players.length*100)+"%";
+
+ game.revealed=false;
+}
+
+function revealRole() {
+ if(game.revealed)return;
+
+ game.revealed=true;
+
+ const player=game.players[game.revealIndex];
+ const isImpostor=game.roles[player.id]==="impostor";
+
+ $("revealIcon").textContent=isImpostor?"🕵️":"🔎";
+ $("role").textContent=isImpostor?"YOU ARE THE IMPOSTOR":"YOU ARE CREW";
+ $("role").style.color=isImpostor?"#ff8eae":"#79e3b0";
+
+ $("secretWord").textContent=isImpostor
+  ?"IMPOSTOR"
+  :game.word.toUpperCase();
+
+ const showCategory=$("showCategory").checked;
+
+ $("revealCategory").textContent=
+  (!isImpostor||showCategory)
+  ?"CATEGORY: "+game.category
+  :"";
+
+ $("revealHint").textContent=isImpostor
+  ?"Blend in. Listen to the clues and guess the secret word."
+  :"Remember the word. Give clues without saying it.";
+
+ $("revealButton").style.display="none";
+ $("passButton").style.display="block";
+}
+
+function passPhone() {
+ game.revealIndex++;
+
+ if(game.revealIndex<game.players.length) {
+  renderReveal();
+ } else {
+  showScreen("discussion");
+ }
+}
+
+/* DISCUSSION */
+function selectLaps(number,button) {
+ game.laps=number;
+ document.querySelectorAll(".lap").forEach(x=>x.classList.remove("active"));
+ button.classList.add("active");
+}
+
+/* VOTING */
+function startVoting() {
+ game.voterIndex=0;
+ game.votes={};
+ renderVote();
+ showScreen("voting");
+}
+
+function renderVote() {
+ const voter=game.players[game.voterIndex];
+
+ $("voterTitle").textContent=voter.name+"'s Vote";
+ $("voterText").textContent=
+  "Pass the phone to "+voter.name+". Select one suspected impostor.";
+
+ $("voteButton").disabled=true;
+ game.selectedVote=null;
+
+ const root=$("voteOptions");
+ root.innerHTML="";
+
+ /* CHANGE: SHOW ALL PLAYERS INCLUDING CURRENT VOTER */
+ game.players.forEach(target=>{
+  const button=document.createElement("button");
+  button.className="vote-option";
+  button.type="button";
+
+  const avatar=document.createElement("span");
+  avatar.className="avatar";
+  avatar.textContent=target.name.charAt(0).toUpperCase();
+
+  const name=document.createElement("span");
+  name.textContent=target.name;
+
+  button.append(avatar,name);
+
+  button.addEventListener("click",()=>{
+   game.selectedVote=target.id;
+
+   document.querySelectorAll(".vote-option")
+    .forEach(x=>x.classList.remove("selected"));
+
+   button.classList.add("selected");
+   $("voteButton").disabled=false;
+  });
+
+  root.appendChild(button);
+ });
+}
+
+function submitVote() {
+ if(game.selectedVote===null)return;
+
+ game.votes[game.players[game.voterIndex].id]=game.selectedVote;
+
+ game.voterIndex++;
+
+ if(game.voterIndex<game.players.length) {
+  renderVote();
+ } else {
+  finishVoting();
+ }
+}
+
+/* RESULTS */
+function finishVoting() {
+ const tally={};
+
+ Object.values(game.votes).forEach(id=>{
+  tally[id]=(tally[id]||0)+1;
+ });
+
+ const highest=Math.max(0,...Object.values(tally));
+
+ const leaders=Object.keys(tally)
+  .filter(id=>tally[id]===highest);
+
+ const tied=leaders.length!==1;
+ const eliminated=tied?null:+leaders[0];
+
+ const caught=!tied&&game.impostors.includes(eliminated);
+
+ if(caught)game.crewScore++;
+ else game.impostorScore++;
+
+ $("resultHeading").textContent=caught
+  ?"IMPOSTOR EXPOSED!"
+  :"IMPOSTORS ESCAPED!";
+
+ $("winner").textContent=caught?"CREW WINS!":"IMPOSTORS WIN!";
+ $("resultIcon").textContent=caught?"🎉":"🕵️";
+
+ $("resultMessage").textContent=caught
+  ?"The group identified an impostor!"
+  :(tied?"The vote was tied. The impostors escaped.":"The group voted for a crew member.");
+
+ $("resultWord").textContent=game.word;
+ $("resultCategory").textContent="CATEGORY: "+game.category;
+
+ const impostorNames=game.players
+  .filter(p=>game.impostors.includes(p.id))
+  .map(p=>p.name);
+
+ $("impostorNames").textContent=
+  "Impostor"+(impostorNames.length>1?"s":"")+": "+impostorNames.join(", ");
+
+ const sorted=[...game.players].sort((a,b)=>
+  (tally[b.id]||0)-(tally[a.id]||0)
+ );
+
+ $("voteResults").innerHTML=sorted.map(p=>
+  `<div class="result-row">
+    <span>${escapeHTML(p.name)} ${game.impostors.includes(p.id)?"🕵️":""}</span>
+    <strong>${tally[p.id]||0} votes</strong>
+   </div>`
+ ).join("");
+
+ $("crewScore").textContent=game.crewScore;
+ $("impostorScore").textContent=game.impostorScore;
+
+ showScreen("result");
+}
+
+/* NEW PARTY */
+function newParty() {
+ game.players=[];
+ game.crewScore=0;
+ game.impostorScore=0;
+
+ buildPlayers();
+ showScreen("setup");
+}
+
+/* RESTORE SETTINGS ON STARTUP */
+function initializeGame() {
+ const saved=loadSettings();
+
+ if(saved) {
+  if(saved.playerCount) {
+   $("playerCount").value=saved.playerCount;
+  }
+
+  if(saved.impostorCount) {
+   $("impostorCount").value=saved.impostorCount;
+  }
+
+  $("showCategory").checked=!!saved.showCategory;
+
+  buildPlayers(saved.names||[]);
+  buildCategories(saved.selectedCategories||Object.keys(WORDS));
+ } else {
+  buildPlayers();
+  buildCategories();
+ }
+
+}
+
+/* INITIALIZE */
+initializeGame();
+</script>
+</body>
+</html>

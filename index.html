@@ -144,8 +144,8 @@ Minecraft Classic, Roblox (browser version), Among Us (online), Temple Run 2,Dri
 
     <div class="game-card highlight-card">
      <div class="game-card">
-  <a href="view-page.html" data-id="149">
-   <img src="images/GTAV.webp" alt="Action,adventure,openworld" loading="lazy">
+  <a href="view-page.html" data-id="150">
+   <img src="images/Imposter.webp" alt="Action,adventure,openworld" loading="lazy">
    </a>
    </div></div>
      
@@ -1215,7 +1215,7 @@ border-radius: 16px;
     </div>
 
     <p style="font-size: 14px; color: #888; margin-top: 20px;">
-      © 2025 Playonic | Crafted with ❤️ by Aryan
+      © 2025 Playonic | Created with ❤️ by <b>Aryan</b>
     </p>
   </footer>
 </div>
@@ -2368,6 +2368,171 @@ window.addEventListener("pageshow", function () {
 
 <script scr="game.json"></script>
  <script src="games.js"></script>
+ 
+ 
+ 
+ <!---------DIWALI START------------>
+ <!--
+  PLAYONIC DIWALI POPUP
+  Paste this whole block in your index.html just before </body>.
+  - Auto-shows from 5 Nov to 12 Nov 2026 (change DIWALI_START / DIWALI_END below)
+  - 
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+
+<style>
+  .dw-overlay{
+    position:fixed; inset:0; z-index:99999;
+    display:none; align-items:center; justify-content:center;
+    padding:16px; background:rgba(6,3,14,.82);
+    backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  }
+  .dw-overlay.dw-open{ display:flex; animation:dwFade .35s ease-out; }
+  @keyframes dwFade{ from{opacity:0} to{opacity:1} }
+
+  .dw-card{
+    position:relative; width:100%; max-width:380px; text-align:center;
+    padding:30px 24px 24px; border-radius:22px;
+    color:#fff4de; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:
+      radial-gradient(120% 70% at 50% 100%, rgba(255,140,30,.28), transparent 60%),
+      linear-gradient(180deg,#1a0b2e 0%,#12081f 100%);
+    border:1px solid rgba(255,190,90,.35);
+    box-shadow:0 0 0 4px rgba(255,170,60,.08), 0 24px 60px rgba(0,0,0,.6), 0 0 80px rgba(255,140,30,.18);
+  }
+  .dw-close{
+    position:absolute; top:10px; right:12px; width:34px; height:34px;
+    border:0; border-radius:50%; cursor:pointer;
+    background:rgba(255,255,255,.08); color:#ffd9a0; font-size:20px; line-height:1;
+  }
+  .dw-close:hover{ background:rgba(255,255,255,.16); }
+  .dw-close:focus-visible, .dw-btn:focus-visible{ outline:3px solid #ffc857; outline-offset:2px; }
+
+  .dw-logo{ height:26px; width:auto; opacity:.9; margin-bottom:6px; }
+
+  .dw-diyas{ display:flex; justify-content:center; align-items:flex-end; gap:14px; height:64px; margin:6px 0 14px; }
+  .dw-diya{ position:relative; width:34px; height:46px; }
+  .dw-diya:nth-child(2), .dw-diya:nth-child(4){ transform:translateY(-6px); }
+  .dw-diya:nth-child(3){ transform:translateY(-12px); }
+  .dw-bowl{
+    position:absolute; bottom:0; left:0; width:34px; height:14px;
+    border-radius:0 0 34px 34px; background:linear-gradient(180deg,#e98a1f,#a8480c);
+  }
+  .dw-bowl::before{ /* rim */
+    content:""; position:absolute; top:-3px; left:-2px; right:-2px; height:6px;
+    border-radius:6px; background:#f6b24a;
+  }
+  .dw-flame{
+    position:absolute; left:50%; bottom:15px; width:12px; height:24px; margin-left:-6px;
+    background:radial-gradient(60% 70% at 50% 75%, #fff6c2 0%, #ffc233 45%, #ff7a12 100%);
+    border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;
+    box-shadow:0 0 18px 6px rgba(255,170,40,.55);
+    transform-origin:50% 100%; transform:scale(0); opacity:0;
+  }
+  .dw-open .dw-flame{ animation:dwLight .5s ease-out forwards, dwFlicker 1.6s ease-in-out .6s infinite; }
+  .dw-open .dw-diya:nth-child(1) .dw-flame{ animation-delay:.25s, .85s; }
+  .dw-open .dw-diya:nth-child(2) .dw-flame{ animation-delay:.45s, 1.05s; }
+  .dw-open .dw-diya:nth-child(3) .dw-flame{ animation-delay:.65s, 1.25s; }
+  .dw-open .dw-diya:nth-child(4) .dw-flame{ animation-delay:.85s, 1.45s; }
+  .dw-open .dw-diya:nth-child(5) .dw-flame{ animation-delay:1.05s, 1.65s; }
+  @keyframes dwLight{ to{ transform:scale(1); opacity:1; } }
+  @keyframes dwFlicker{
+    0%,100%{ transform:scale(1) rotate(-1.5deg); }
+    35%{ transform:scale(1.07,.94) rotate(2deg); }
+    70%{ transform:scale(.95,1.06) rotate(-2deg); }
+  }
+
+  .dw-hindi{ font-family:"Yatra One","Noto Serif Devanagari",Georgia,serif; font-size:34px; line-height:1.2; color:#ffc857; margin:0; text-shadow:0 0 22px rgba(255,170,40,.45); }
+  .dw-title{ font-family:"Yatra One",Georgia,serif; font-size:22px; margin:6px 0 10px; color:#fff4de; font-weight:400; }
+  .dw-text{ font-size:15px; line-height:1.55; color:#e8d6bd; margin:0 auto 20px; max-width:30ch; }
+
+  .dw-btn{
+    display:inline-block; border:0; cursor:pointer; text-decoration:none;
+    padding:12px 28px; border-radius:999px; font-size:16px; font-weight:700;
+    color:#2a1200; background:linear-gradient(180deg,#ffd36e,#ff9d1c);
+    box-shadow:0 6px 20px rgba(255,150,30,.4);
+  }
+  .dw-btn:hover{ filter:brightness(1.07); }
+  .dw-later{ display:block; margin:12px auto 0; background:none; border:0; color:#b9a688; font-size:13px; cursor:pointer; }
+  .dw-later:hover{ color:#e8d6bd; }
+
+  @media (prefers-reduced-motion:reduce){
+    .dw-overlay.dw-open{ animation:none; }
+    .dw-open .dw-flame{ animation:none !important; transform:scale(1); opacity:1; }
+  }
+</style>
+
+<div class="dw-overlay" id="dwOverlay" role="dialog" aria-modal="true" aria-labelledby="dwTitle">
+  <div class="dw-card">
+    <button class="dw-close" id="dwClose" aria-label="Close">&times;</button>
+
+    <img class="dw-logo" src="/images/playonic.webp" alt="Playonic" onerror="this.style.display='none'">
+
+    <div class="dw-diyas" aria-hidden="true">
+      <div class="dw-diya"><div class="dw-flame"></div><div class="dw-bowl"></div></div>
+      <div class="dw-diya"><div class="dw-flame"></div><div class="dw-bowl"></div></div>
+      <div class="dw-diya"><div class="dw-flame"></div><div class="dw-bowl"></div></div>
+      <div class="dw-diya"><div class="dw-flame"></div><div class="dw-bowl"></div></div>
+      <div class="dw-diya"><div class="dw-flame"></div><div class="dw-bowl"></div></div>
+    </div>
+
+    <p class="dw-hindi">शुभ दीपावली</p>
+    <h2 class="dw-title" id="dwTitle">Happy Diwali from Playonic</h2>
+    <p class="dw-text">May your home glow with light, your days fill with joy, and your high scores keep climbing.</p>
+
+    <button class="dw-btn" id="dwPlay">Play now</button>
+    <button class="dw-later" id="dwLater">Maybe later</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ---- Settings (edit these) ----
+  var DIWALI_START = new Date(2026, 10, 5);        // 5 Nov 2026 (month is 0-based)
+  var DIWALI_END   = new Date(2026, 10, 12, 23, 59); // 12 Nov 2026
+  var DELAY_MS     = 1200;                          // popup delay after page load
+  // --------------------------------
+
+  var KEY = 'playonic_diwali_2026_seen';
+  var overlay = document.getElementById('dwOverlay');
+  if(!overlay) return;
+
+  var now = new Date();
+  var forced = /[?&]diwali=1/.test(location.search);
+  var inWindow = now >= DIWALI_START && now <= DIWALI_END;
+
+  var today = now.toISOString().slice(0,10);
+  var seen = false;
+  try { seen = localStorage.getItem(KEY) === today; } catch(e){}
+
+  if(!forced && (!inWindow || seen)) return;
+
+  function open(){
+    overlay.classList.add('dw-open');
+    document.getElementById('dwPlay').focus();
+  }
+  function close(){
+    overlay.classList.remove('dw-open');
+    try { localStorage.setItem(KEY, today); } catch(e){}
+  }
+
+  setTimeout(open, DELAY_MS);
+
+  document.getElementById('dwClose').addEventListener('click', close);
+  document.getElementById('dwLater').addEventListener('click', close);
+  document.getElementById('dwPlay').addEventListener('click', close);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+})();
+</script>
+
+<!-----------DIWALI END------------>
+
+
+
 </body>
 </html
   
