@@ -1,0 +1,494 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+  
+  
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MB39LPJG4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    
+    gtag('config', 'G-MB39LPJG4J');
+  </script>
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  
+ 
+  <style>
+body {
+      margin: 0;
+      background: linear-gradient(135deg, #1e3c72, #1e3c72);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  </style>
+</head>
+<body>
+
+
+
+<body>
+  <!--============================= */
+          💻CATEGORY SECTION
+    ============================--->
+
+
+ <style>/* CATEGORY LIST */
+.category-list {
+  padding: 15px;
+  background: ;
+}
+
+/* Single Item */
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #FFFFFF;
+  padding: 9px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  transition: 0.3s;
+  margin: 24px;
+  margin-left: 14px;
+ 
+}
+
+/* Hover Effect */
+.category-item:hover {
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.02);
+}
+
+/* Image */
+.category-item img {
+  width: 85px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Text */
+.category-item span {
+  color: #000000;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+/* ============================= */
+/* 💻 DESKTOP MODE (GRID STYLE) */
+/* ============================= */
+
+@media (min-width: 768px) {
+  .category-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px; /* 🔥 uniform gap बढ़ाया side-by-side के लिए */
+    /* margin-left हटाया - अब clean start */
+    padding: 0 20px; /* optional: sides में breathing space */
+    margin-left: 35px;
+    margin-top: 30px;
+    
+    
+  }
+
+  .category-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #ffffff;
+    padding: 8px -5px; /* padding थोड़ा adjust */
+    border-radius: 18px;
+    margin: 0 !important; /* सभी margins zero */
+    height: 90px;
+    width: 245px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    /* margin-left: 70px हटाया - ये gap का villain था */
+  }
+
+  .category-item:hover {
+    transform: scale(1.03);
+  }
+
+  .category-item img {
+    width: 89px;
+    height: 89px;
+    object-fit: contain;
+  }
+
+  .category-item span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-left: 10px;
+  }
+
+}
+
+
+/* ============================= */
+/* 💻 DESKTOP ONLY HIGHLIGHT */
+/* ============================= */
+
+@media (min-width: 768px) {
+
+  /* 🔥 HIGHLIGHT CATEGORY CARD (2x2) */
+  .category-highlight {
+    border-radius: 20px;
+/*  box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+  animation: highlightPulse 2s infinite;*/
+position: relative;
+height: 245px;
+width: 256px;
+object-fit: cover;
+padding: 0px;
+ margin-left: 75px;
+    
+
+    /* OPTIONAL GLOW */
+    /* box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+       animation: highlightPulse 2s infinite; */
+  }
+  
+
+  /* IMAGE FULL COVER */
+  .category-highlight img {
+    width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 16px;
+
+    transition: transform 0.3s ease;
+  }
+
+  /* HOVER EFFECT */
+  .category-highlight:hover img {
+    transform: scale(1.05);
+  }
+
+  /* TEXT OVERLAY */
+  .category-highlight span {
+    position: absolute;
+    bottom: 5px;
+    left: -3px;
+
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+
+    background: rgba(0,0,0,0.4);
+    padding: 4px 10px;
+    border-radius: 8px;
+  }
+
+}
+
+/* ============================= */
+/* 📱 MOBILE → HIDE HIGHLIGHT */
+/* ============================= */
+
+@media (max-width: 767px) {
+
+  .category-highlight {
+    display: none;
+  }
+
+}
+
+
+/* 🔥 OPTIONAL GLOW ANIMATION */
+
+
+
+
+
+
+/* ============================= */
+/* 📱MOBILE-LANDSCAPE MODE  */
+/* ============================= */
+ @media (max-width: 900px) and (orientation: landscape) {
+  
+ .category-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px; /* 🔥 uniform gap बढ़ाया side-by-side के लिए */
+    /* margin-left हटाया - अब clean start */
+    padding: 0 20px; /* optional: sides में breathing space */
+    margin-left: -5px;
+    margin-top: 30px;
+    
+    
+  }
+
+  .category-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #ffffff;
+    padding: 8px -5px; /* padding थोड़ा adjust */
+    border-radius: 18px;
+    margin: 0 !important; /* सभी margins zero */
+    height: 70px;
+    width: 210px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    /* margin-left: 70px हटाया - ये gap का villain था */
+  }
+
+  .category-item:hover {
+    transform: scale(1.03);
+  }
+
+  .category-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+  }
+
+  .category-item span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-left: 10px;
+  }
+
+
+
+
+/* ============================= */
+/* 💻 LANDSCAPE ONLY HIGHLIGHT */
+/* ============================= */
+
+
+
+  /* 🔥 HIGHLIGHT CATEGORY CARD (2x2) */
+  .category-highlight {
+    border-radius: 20px;
+/*  box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+  animation: highlightPulse 2s infinite;*/
+position: relative;
+height: 210px;
+width: 220px;
+object-fit: cover;
+padding: 0px;
+ margin-left: 75px;
+    
+
+    /* OPTIONAL GLOW */
+    /* box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+       animation: highlightPulse 2s infinite; */
+  }
+  
+
+  /* IMAGE FULL COVER */
+  .category-highlight img {
+    width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 16px;
+
+    transition: transform 0.3s ease;
+  }
+
+  /* HOVER EFFECT */
+  .category-highlight:hover img {
+    transform: scale(1.05);
+  }
+
+  /* TEXT OVERLAY */
+  .category-highlight span {
+    position: absolute;
+    bottom: 5px;
+    left: -3px;
+
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+
+    background: rgba(0,0,0,0.4);
+    padding: 4px 10px;
+    border-radius: 8px;
+  }
+
+
+
+/* ============================= */
+/* 📱 MOBILE → HIDE HIGHLIGHT */
+/* ============================= */
+
+
+
+
+}
+
+
+
+
+</style>
+
+
+<div class="category-list">
+  
+  <!--- <a href="ca.html?type=kid" class="category-item category-highlight">
+  <img src="images/playonickids.webp">
+  <span>Coming Soon...</span>
+</a>
+ 
+    <a href="ca.html?type=racing" class="category-item category-highlight">
+    <img src="videos/ezgif.gif">
+    <span>Coming Soon...</span>
+   
+  <!-- CATEGORY 1 -->
+  <a href="ca.html?type=racing" class="category-item">
+    <img src="category/racing.png" alt="Racing Games">
+    <span>Racing Games</span>
+  </a>
+  
+  <!-- CATEGORY 2 -->
+  <a href="ca.html?type=action" class="category-item">
+    <img src="category/action.png" alt="Action Games">
+    <span>Action Games</span>
+  </a>
+  
+  <!-- CATEGORY 3 -->
+  <a href="ca.html?type=puzzle" class="category-item">
+    <img src="category/puzzle.png" alt="Puzzle Games">
+    <span>Puzzle Games</span>
+  </a>
+  
+  <!-- CATEGORY 4 -->
+  <a href="ca.html?type=shooting" class="category-item">
+    <img src="category/shooting.png" alt="Shooting Games">
+    <span>Shooting Games</span>
+  </a>
+  
+  <!-- CATEGORY 5 -->
+  <a href="ca.html?type=3d" class="category-item">
+    <img src="category/3d.png" alt="3D Games">
+    <span>3D Games</span>
+  </a>
+  
+  <!-- CATEGORY 6 -->
+   <a href="ca.html?type=multiplayer" class="category-item">
+    <img src="category/multiplayer.png" alt="Multiplayer Games">
+    <span>Multiplayer Games</span>
+  </a>
+  
+  <!-- CATEGORY 7 -->
+  <a href="ca.html?type=adventure" class="category-item">
+    <img src="category/adventure.png" alt="Adventure Games">
+    <span>Adventure Games</span>
+  </a>
+  
+  <!-- CATEGORY 8 -->
+  <a href="ca.html?type=html5" class="category-item">
+    <img src="category/html5.png" alt="HTML5 Games">
+    <span>HTML5 Games</span>
+  </a>
+  
+    <a href="ca.html?type=arcade" class="category-item">
+    <img src="category/arcade.png" alt="Arcade Games">
+    <span>Arcade Games</span>
+  </a>
+    <a href="ca.html?type=gameforgirls" class="category-item">
+    <img src="category/gamesforgirls.png" alt="Game For Girls">
+    <span>Game For Girls</span>
+  </a>
+  
+      <a href="ca.html?type=car" class="category-item">
+      <img src="category/car.png" alt="Car Games">
+      <span>Car Games</span>
+    </a>
+        <a href="ca.html?type=brain" class="category-item">
+      <img src="category/brain.png" alt="Brain Games">
+      <span>Brain Games</span>
+    </a>
+        <a href="ca.html?type=fighting" class="category-item">
+      <img src="category/fighting.png" alt="fighting Games">
+      <span>Fighting Games</span>
+    </a>
+      <a href="ca.html?type=simulation" class="category-item">
+    <img src="category/simulation.png" alt="simulation Games">
+    <span>Simulation Games</span>
+  </a>
+  
+     <a href="ca.html?type=subwaysurfer" class="category-item">
+    <img src="category/subwaysurfer1.png" alt="simulation Games">
+    <span>Subway Surfer Games</span>
+  </a>
+  
+   
+</div>
+
+
+
+
+ 
+ 
+ 
+  <!-- JavaScript -->
+<!-- 🔁 Swapped Wave + Footer -->
+<div style="position: relative; background: white;">
+  <!-- Wave (Black Now) -->
+  <div style="position: absolute; top: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0;">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="display: block; width: 100%; height: 80px;">
+<path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#000000"></path> <!-- Black wave -->
+    </svg>
+  </div>
+
+  <!-- Footer Content (White Background) -->
+  <footer style="padding: 60px 20px 30px; text-align: center; font-family: 'Segoe UI', sans-serif; background: white;">
+    <div style="margin-bottom: 15px;">
+      <img src="images/playonic.webp" alt="Playonic Logo" style="height: 80px; ">
+      <p style="font-weight: bold; font-size: 18px; margin: 10px 0 0; color: #333;">Let the world play</p>
+    </div>
+
+    <!-- Footer Links -->
+    <div style="margin: 15px 0;">
+      <a href="About.html" style="margin: 0 15px; text-decoration: none; color: #333; font-weight: bold;">About</a>
+      <a href="privacy policy.html" style="margin: 0 15px; text-decoration: none; color: #333; font-weight: bold;">Privacy Policy</a>
+      <a href="contact.html" style="margin: 0 15px; text-decoration: none; color: #333; font-weight: bold;">Contact</a>
+    </div>
+
+    <p style="font-size: 14px; color: #888; margin-top: 20px;">
+      © 2025 Playonic | Created with ❤️ by <b>Aryan</b>
+    </p>
+  </footer>
+</div>
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: 'en' },
+      'google_translate_element'
+    );
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+ 
+ 
+  <!-- JavaScript -->
+
+
+ <script src="games.js"></script>
+ 
+  
+  
+</body>
+</html>
+
+
+  
+ 
+ 
+ 
